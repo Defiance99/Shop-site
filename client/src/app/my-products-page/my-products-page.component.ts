@@ -13,7 +13,6 @@ import { switchMap } from 'rxjs/operators';
 export class MyProductsPageComponent implements OnInit {
 
   items: Product
-  visible = !!this.items
 
   constructor(private crud: UserOperationService) {}
 

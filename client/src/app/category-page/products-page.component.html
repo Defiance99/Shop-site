@@ -1,0 +1,11 @@
+<main class="creatingProducts">
+  <div class="listItemContainer">
+    <ul class="listItem">
+      <li *ngFor="let item of items" class="hoverable">
+        <p>{{item.category}}:</p>
+          <p><a [routerLink]="['/product', item._id]">{{item.name}}</a></p>
+          <img class="image" [src]="item.image" height="150" width="150" [routerLink]="['/product', item._id]">
+      </li>
+    </ul>
+  </div>
+</main>

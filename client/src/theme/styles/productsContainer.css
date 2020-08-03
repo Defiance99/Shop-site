@@ -1,0 +1,14 @@
+.creatingProducts {
+  background-color: white;
+  display: flex;
+  padding: 20px;
+  width: 67%;
+  min-height: 500px;
+  margin-left: 15%;
+  margin-top: 2%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.createProducts {
+  margin: 0 auto;
+}

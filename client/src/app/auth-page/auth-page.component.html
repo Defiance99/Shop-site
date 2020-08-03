@@ -1,0 +1,55 @@
+<form class="creatingProducts" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="formAuth">
+    <div class="formAuthContainer">
+        <p><span class="red-text fs2em">Авторизация</span></p>
+
+        <!-- Login -->
+        <div class="input-field">
+          <label for="login">Логин:</label>
+          <input type="text"
+            id="login"
+            class="validate"
+            formControlName="login"
+            [ngClass]="{'invalid': form.get('login').invalid && form.get('login').touched}"
+          >
+          <span class="errorText helper-text" *ngIf="form.get('login').invalid && form.get('login').touched">
+            <span *ngIf="form.get('login').errors['required']">- Логин не должен быть пустым</span>
+          </span>
+        </div>
+
+        <!-- Password -->
+        <div class="row">
+          <div class="input-field">
+            <label for="password">Пароль:</label>
+            <input type="password"
+              id="password"
+              class="validate"
+              formControlName="password"
+              [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched}"
+            >
+            <span class="errorText helper-text" *ngIf="form.get('password').invalid && form.get('password').touched">
+              <span *ngIf="form.get('password').errors['required']">- Пароль не должен быть пустым</span>
+              <span *ngIf="form.get('password').errors['minLength'] && form.get('password').errors['minLength']['requiredLength']">
+                - Пароль должен быть длинее на {{form.get('password').errors['minLength']['actualLength']}} символов</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Enter -->
+        <div class="row ">
+          <div class="center-align">
+            <button type="submit"
+            class="btn waves-effect btnSubmit"
+            name="action"
+            [disabled]="form.invalid || form.disabled"
+          > Войти
+          </button>
+          </div>
+        </div>
+
+        <p>Впервые на сайте?
+          <button class="getFormRegistration waves-effect waves-light btn" type="submit"><a routerLink="/register">Зарегистрироваться</a></button>
+        </p>
+    </div>
+  </div>
+</form>

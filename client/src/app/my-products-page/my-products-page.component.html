@@ -1,0 +1,19 @@
+<main class="creatingProducts">
+  <!-- <div class="controlPanel hoverable collection">
+
+  </div> -->
+  <div class="header-block">
+    <h4><span class="orange-text" *ngIf="!items">Ваш каталог пуст</span></h4>
+  </div>
+  <div class="displayFlex">
+      <div class="listItemContainer">
+        <ul class="listItem">
+          <li *ngFor="let item of items" class="hoverable">
+            <p>{{item.category}}: </p>
+              <p><a [routerLink]="['/myProduct', item._id]">{{item.name}}</a></p>
+              <img class="image" [src]="item.image" height="150" width="150" [routerLink]="['/myProduct', item._id]">
+          </li>
+        </ul>
+      </div>
+  </div>
+</main>

@@ -1,0 +1,293 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*                      Header                      */
+
+.Header_InnerContent {
+    display: flex;
+    justify-content: space-between;
+
+    width: 90%;
+    margin-top: 50px;
+    margin-left: 5%;
+}
+
+.HeaderRightBlock {
+    display: flex;
+    align-items: center;
+    width: 90%;
+}
+
+.HeaderRightBlock div {
+
+    margin: auto;
+}
+
+.header-logo {
+    width: 250px;
+    height: 60px;
+}
+
+.searchLogoBlock {
+   width: 85%;
+}
+
+.searchLogoBlock input {
+    width: 93%;
+    height: 50px;
+    border: 2px orange solid;
+    font-size: 1.5em;
+    vertical-align: bottom;
+}
+
+.searchLogo {
+  opacity: 0.6;
+}
+
+.authLogoContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.authLogo {
+    height: 30px;
+    text-align: center;
+}
+
+.favoriteLogo {
+  opacity: 0.6;
+  height: 30px;
+}
+
+.favoriteLogo:hover, .searchLogo:hover{
+    opacity: 1;
+}
+
+.authLogo div:first-child {
+  opacity: 0.6;
+}
+
+.logoutBut {
+  opacity: 0.6;
+}
+
+.authLogo div:first-child:hover, .logoutBut:hover {
+  opacity: 1;
+}
+
+.mainNavigationList {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.mainNavigationList > li:nth-child(n + 2) {
+    margin-left: 25px;
+}
+
+
+.mainNavigationList > li:first-child {
+    background-color: black;
+}
+
+
+
+/*                      Navigation                      */
+
+
+.navigation {
+    margin-top: 25px;
+    background-color: rgb(2,156,228);
+    width: 100%;
+    font-size: 1.5em;
+    color: white;
+}
+
+.navigation ul {
+    padding:0;
+    margin:0;
+    list-style: none;
+    position: relative;
+}
+
+.navContainer {
+    margin-left: 5%;
+}
+
+.mainNavigationList li a:hover {
+    cursor: pointer;
+    color: orange;
+    opacity: 0.7;
+}
+
+.mainNavigationList  li:hover > ul{
+  display: flex;
+  flex-direction: column;
+}
+
+.mainNavigationList  li  ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    z-index: 100;
+    min-width: 370px;
+    min-height: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: -50 0 10px orange;
+    background-color: white;
+}
+
+.mainNavigationList ul ul  {
+    position: absolute;
+    top: 0%;
+    left: 100%;
+}
+
+.mainCatalogProducts li a {
+  color: black;
+  font-size: 0.7em;
+}
+
+
+/* →*/
+.mainNavigationList li > a:hover:after {color: orange;}
+.mainNavigationList li > a:after {
+    content: '▼';
+    width: 5px;
+    height: 5px;
+    font-size: 14px;
+}
+.mainNavigationList li > a:only-child:after { content: ''; }
+
+
+/*                      Form Authentication                      */
+
+/*
+.formAuth {
+    background-color: rgb(240,242,245) black;
+    position: relative;
+    width: 80%;
+    top: 5%;
+    height: 80%;
+    left: 10%;
+    display: none;
+}
+
+.formAuthContainer {
+    display: inline-block;
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    top: 25%;
+    left: 30%;
+    overflow: hidden;
+}
+
+.formAuthContainer p {
+    text-align: center;
+}
+
+.formAuthContainer span {
+    color: rgb(255,78,51);
+    font-size: 3em;
+}
+
+.formAuthContainer input {
+    font-size: 2em;
+    left: 5px;
+}
+
+.enterAuth {
+    width: 400px;
+    padding: 5px;
+    font-size: 2em;
+    color: white;
+    background-color: orange;
+    border: 0px black solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.enterAuth:hover {
+    color: chocolate;
+} */
+
+
+
+
+
+/*               Form Registration              */
+
+/*
+.formRegisterContainer {
+    display: inline-block;
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    top: 20%;
+    left: 30%;
+    overflow: hidden;
+    display: none;
+}
+
+.formRegisterContainer p {
+    text-align: center;
+}
+
+.formRegisterContainer span {
+    color: rgb(255,78,51);
+    font-size: 3em;
+}
+
+.formRegisterContainer input {
+    font-size: 2em;
+
+} */
+
+
+
+
+
+
+
+/*                  Cross                */
+/*
+.cross {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    }
+
+.cross:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.cross:before, .cross:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+
+.cross:before {
+    transform: rotate(45deg);
+}
+
+
+.cross:after {
+    transform: rotate(-45deg);
+}
+ */

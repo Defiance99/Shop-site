@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" >
+    <link rel="stylesheet" type="text/css" href="./slideShow.css">
+</head>
+<body>
+    <div class="grayBackground" onclick="closeFormAuth()"></div>
+    <div class="formAuth">
+        <div class="cross" onclick="closeFormAuth()"></div> 
+        <div class="formAuthContainer">
+            
+            <p><span>Авторизация</span></p>
+            <form>
+                <p><input placeholder="Имя пользователя"></p>
+                <p><input placeholder="Пароль" type="password"></p>
+            </form>
+            <p><input type="button" class="enterAuth" value="Войти"></p>
+            <p>Впервые на сайте? <button class="getFormRegistration" onclick="showFormRegister()">Зарегистрироваться</button></p>
+        </div>
+        <div class="formRegisterContainer">
+            <p><span>Регистрация</span></p>
+            <p><input placeholder="Ваше имя"></p>
+            <p><input placeholder="Второе имя "</p>
+            <p><input placeholder="Пароль" type="password"></p>
+            <p><input placeholder="Повторите пароль" type="password"></p>
+            <p><input type="button" class="enterAuth" value="Зарегистроваться"></p>
+        </div>
+    </div>
+
+
+
+    
+
+    <header class="Header">
+        <div class="Header_InnerContent">
+            <div class="HeaderLeftBlock">
+                <a href="" title="Торговый портал">
+                    <img src="./pictures/Header__Logo.svg" alt="Торговый портал shop.by" class="header-logo">
+                </a>
+            </div>  
+            <div class="HeaderRightBlock">
+                <div class="searchLogoBlock">
+                    <input type="text" placeholder="Название товара" class="inputSearch">
+                    <a href="">
+                        <img src="./pictures/logoSearch.jpg" alt="Поиск" class="searchLogo" width="45" height="35" title="Поиск"> 
+                    </a>
+                </div>
+                <div class="favoriteLogo">
+                    <a href="">
+                        <img src="./pictures/logoFavorite.jpg" alt="Избранное" class="favoriteLogo-Class" width="30" height="30" title="Избранное">
+                    </a>
+                </div>
+                <div class="authLogo">
+                    <a href="">
+                        <img src="./pictures/logoAuth.png" alt="" class="authLogoImg" width="30" height="30" title="Войти" onmouseover="showFormAuth()">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="Navigation">
+        <div class="navContainer">
+            <ul class="mainNavigationList">
+                <li><a>Каталог товаров</a>
+                    <ul class="mainCatalogProducts">
+                        <li><a>Product vegetebles</a>
+                            <ul>
+                                <li><a>123</a></li>
+                                <li><a>123</a></li>
+                                <li><a>123</a></li>
+                            </ul>
+                        </li>
+                        <li><a>Product</a></li>
+                        <li><a>Product airplans</a></li>
+                        <li><a>Product airplans 2</a></li>
+                    </ul>
+                </li>
+                <li><a>Создать товар</a></li>
+                <li><a>Мои товары</a></li>
+                <li><a>Случайный товар</a></li>
+                <li><a>Корзина</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+    <main id="aboutProducts">
+        <section class="mainSlideShow">
+            <div class="slider_item"><a href="#"><img src="./pictures/slideShow/pic2.png" width="100%" height="100%"></a></div>
+            <div class="slider_item"><a href="#"><img src="./pictures/slideShow/shopPortal.png" width="100%" height="100%"></a></div>
+            <div class="slider_item"><a href="#"><img src="./pictures/slideShow/pc4.jpg" width="100%" height="100%"></a></div>
+            <div class="slider_item"><a href="#"><img src="./pictures/slideShow/pic2.jpg" width="100%" height="100%"></a></div>
+            <a class="sliderShowButtonLeft sliderShowButton" href="#" role="button" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="sliderShowButtonRight sliderShowButton" href="#" role="button" onclick="plusSlides(1)">&#10095;</a>
+            <div class="fastMenuSlideShow">
+                <div class="dotsForSlideShow" onclick="currentSlides(0)"></div>
+                <div class="dotsForSlideShow" onclick="currentSlides(1)"></div>
+                <div class="dotsForSlideShow" onclick="currentSlides(2)"></div>
+                <div class="dotsForSlideShow" onclick="currentSlides(3)"></div>
+            </div>
+        </section>
+
+
+
+        <section class="slider">
+            <div class="slider__wrapper">
+                <!-- <div class="slider__items"> -->
+                    <div class="slider__item"><a href="#"><img src="../pictures/slideShow/pic2.png" width="100%" height="100%"></div>
+                    <div class="slider__item"><a href="#"><img src="../pictures/slideShow/shopPortal.png" width="100%" height="100%"></div>
+                    <div class="slider__item"><a href="#"><img src="../pictures/slideShow/pc4.jpg" width="100%" height="100%"></div>
+                    <div class="slider__item"><a href="#"><img src="../pictures/slideShow/pic2.png" width="100%" height="100%"></div>
+                    <div class="slider__item"><a href="#"><img src="../pictures/slideShow/shopPortal.png" width="100%" height="100%"></div>
+                    <div class="slider__item"><a href="#"><img src="../pictures/slideShow/pic2.png" width="100%" height="100%"></div>
+                    <div class="slider__item"><a href="#"><img src="../pictures/slideShow/pic2.png" width="100%" height="100%"></div>
+                    <div class="slider__item"><a href="#"><img src="../pictures/slideShow/pic2.jpg" width="100%" height="100%"></div>
+                <!-- </div> -->
+            </div>
+            <a href="" class="slider__control slider__control_prev" role="button">&#10094;</a>
+            <a href="" class="slider__control slider__control_next" role="button">&#10095;</a>
+        </section>
+
+
+    </main>
+
+
+
+    <script>  //operation with authentication forms
+        let formAuth = document.getElementsByClassName("formAuth")[0];
+        let grayBackground = document.getElementsByClassName("grayBackground")[0];
+        let elementRegisterForm = document.getElementsByClassName("formRegisterContainer")[0];
+        let elementAuthForm = document.getElementsByClassName("formAuthContainer")[0];
+
+        function showFormAuth() {
+
+            
+            formAuth.style.display = "inherit";
+            grayBackground.style.display = "inherit"
+        }
+
+        function closeFormAuth() {
+            formAuth.style.display = "none";
+            grayBackground.style.display = "none"
+
+            elementAuthForm.style.display = "block";
+            elementRegisterForm.style.display = "none";
+        }
+
+        function showFormRegister() {
+            elementAuthForm.style.display = "none";
+            elementRegisterForm.style.display = "block";
+        }
+    </script>
+
+
+    <script> /* slide show controllers */
+        var slideIndex = 0;
+        showSlides(slideIndex);
+        setTimeoutSlide();
+
+        
+        function plusSlides(n) {
+            slideIndex += 1;
+            showSlides(slideIndex)
+        }
+
+        function currentSlides(n) {
+            slideIndex = n;
+            showSlides(slideIndex);
+        }
+
+        function showSlides(n) {
+            let slideShowBlocks = document.getElementsByClassName("slider_item");
+            let dots = document.getElementsByClassName("dotsForSlideShow");
+        
+
+            if (n > slideShowBlocks.length - 1) {
+                slideIndex = 0;
+                n = slideIndex;
+            }
+            if (n < 0) {
+                slideIndex = slideShowBlocks.length - 1;
+                n = slideIndex;
+            }
+
+            for (let i = 0; i < slideShowBlocks.length; i++) {
+                if (i == slideIndex) {
+                    slideShowBlocks[i].style.display = "block";
+                    dots[i].style.opacity = "1";
+                    continue;
+                }
+                else {
+                    slideShowBlocks[i].style.display = "none";
+                    dots[i].style.opacity = "0.5";
+                }
+            }
+        }
+
+        function setTimeoutSlide() {
+            setTimeout(plusSlides, 4000);
+            setTimeout(setTimeoutSlide, 4000);
+        }
+        
+
+    </script>
+
+    <script> //animation slide show
+        var slideshow = (function () {
+            return function (selector, config) {
+                _slider = document.querySelector(selector)
+                _sliderContrainer = _slider.querySelector('.slider__items') 
+                _sliderItems = _slider.querySelector('.slider__item')
+                _sliderControllers = _slider.querySelectorAll
+            }
+        })
+
+
+    </script>
+
+</body>
+</html>

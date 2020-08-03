@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/createProducts.css">
+</head>
+<body>
+    <header class="Header">
+        <div class="Header_InnerContent">
+            <div class="HeaderLeftBlock">
+                <a href="" title="Торговый портал">
+                    <img src="./pictures/Header__Logo.svg" alt="Торговый портал shop.by" class="header-logo">
+                </a>
+            </div>  
+            <div class="HeaderRightBlock">
+                <div class="searchLogoBlock">
+                    <input type="text" placeholder="Название товара" class="inputSearch">
+                    <a href="">
+                        <img src="./pictures/logoSearch.jpg" alt="Поиск" class="searchLogo" width="45" height="45" title="Поиск"> 
+                    </a>
+                </div>
+                <div class="favoriteLogo">
+                    <a href="">
+                        <img src="./pictures/logoFavorite.jpg" alt="Избранное" class="favoriteLogo-Class" width="45" height="45" title="Избранное">
+                    </a>
+                </div>
+                <div class="authLogo">
+                    <a href="">
+                        <img src="./pictures/logoAuth.png" alt="" class="authLogoImg" width="45" height="45" title="Войти">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="Navigation">
+        <div class="navContainer">
+            <ul class="mainNavigationList">
+                <li><a>Каталог товаров</a>
+                    <ul class="mainCatalogProducts">
+                        <li><a>Product vegetebles</a>
+                            <ul>
+                                <li><a>123</a></li>
+                                <li><a>123</a></li>
+                                <li><a>123</a></li>
+                            </ul>
+                        </li>
+                        <li><a>Product</a></li>
+                        <li><a>Product airplans</a></li>
+                        <li><a>Product airplans 2</a></li>
+                    </ul>
+                </li>
+                <li><a>Создать товар</a></li>
+                <li><a>Мои товары</a></li>
+                <li><a>Случайный товар</a></li>
+                <li><a>Корзина</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="creatingProducts">
+        <div class="createProducts">
+            <p>Название товара: {{nameProduct-creating}}</p>
+            <p><input></p>
+            <p>Выберите категорию товара: <input ></p>
+            <p>Укажите цену: <input> (Вверх вниз)</p>
+            <p>Загрузите изображение продутка: <input></p>
+            <p>Описание товара:</p>
+            <textarea></textarea>
+            <p><input type="button" value="Создать"</p>
+        </div>
+        <div class="createdProducts">
+            <p>Название товара</p>
+            <p>Категория</p>
+            <p>Картинка</p>
+            <p>Цена</p>
+            <p>Описание</p>            
+        </div>
+    </main>
+</body>
+</html>

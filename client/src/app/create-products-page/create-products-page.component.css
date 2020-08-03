@@ -1,0 +1,76 @@
+* {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.16em;
+
+}
+
+p:last-child {
+  font-size: initial;
+}
+
+textarea {
+  resize: none;
+}
+
+.creatingProducts {
+  background-color: white;
+  display: flex;
+  padding: 20px;
+  width: 67%;
+  min-height: 500px;
+  margin-left: 15%;
+  margin-top: 2%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.invalid {
+  outline: 2px red solid;
+}
+
+.errorText {
+  position: absolute;
+  /* font-size: 0.4em; */
+  margin-left: 5px;
+  color: red;
+}
+
+.dn {
+  display: none;
+}
+
+.butUpload {
+  background-color: orange;
+  color: white;
+  border: 1px orange solid;
+  cursor: pointer;
+  padding: 5px;
+  box-shadow: -2px 2px 1px gray;
+}
+
+.imagePreviewBlock {
+  position: absolute;
+}
+@media (max-width: 1500px) {
+  .imagePreviewBlock {display: none;}
+}
+
+.imgPreview {
+  width: 200px;
+  height: 200px;
+}
+
+.textArea {
+  height: 150px;
+}
+
+.browser-default {
+  font-size: initial;
+}
+
+.fontSizeDefault {
+  font-size: initial;
+}
+
+.displayNone {
+  display: none;
+}

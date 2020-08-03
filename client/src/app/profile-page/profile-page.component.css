@@ -1,0 +1,19 @@
+.formContainer {
+  width: 40%;
+}
+
+.center-align {
+  font-size: 2.2em;
+}
+
+.displayNone {
+  display: none;
+}
+
+.btnSave {
+  margin-left: 8px;
+}
+
+.helper-text {
+  position: absolute;
+}

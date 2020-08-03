@@ -1,0 +1,166 @@
+html, body, div, span, p, a, ul, li{
+                 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.articles {
+    line-height: 1.5em;
+    font-size: 1.1em;
+    font-family: Helvetica, sans-serif;
+}
+
+
+
+/*        Head          */
+
+#header {
+    background: url(pictures/backgroundHeader.jpeg);
+    padding: 20px;
+    width: 70%;
+    margin-left: 13%;
+}
+
+#header .textTitle {
+    padding-left: 20px;
+}
+
+#header .textTitle a{
+    text-decoration: underline;
+    color: black;
+    font-size: 3em;
+    margin: 0 0 0 75px;
+}
+
+
+#header .textTitle p{
+    font-size: 25px;
+    font-weight: 800;
+    margin: 0 0 0 20px;
+    text-indent: 83px;
+}   
+
+#header #logo {
+    float: left;
+    margin: 0 0 0 50px;
+}
+
+#header .socialNets {
+    position: relative;
+    left: 1100px;
+    bottom: 55px;
+}
+
+#header .socialNets li {
+    float: left;
+    list-style-type: none;
+}
+
+
+/*         Area forms           */
+
+#areaForm {
+    float: right;
+    position: relative;
+    bottom: 60px;
+}   
+
+
+
+        /* Navigation */
+#mainNav {
+    width: 70%;
+    margin-left: 13%;
+    border: 1px black solid;
+}
+
+#mainNav ul {
+    margin-bottom: 30px;
+}
+
+#mainNav > ul > li {
+    float: left;
+    margin: 30px 0 0 50px;
+    list-style-type: none;
+    font-size: 30px;
+}
+
+#mainNav ul li a:hover {
+    text-decoration: underline;
+}
+
+#mainNav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+#mainNav a {
+    cursor: pointer;
+}
+
+#mainNav .dropdownList::after {
+    content: '▼';
+    width: 5px;
+    height: 5px;
+    font-size: 14px;
+}
+
+
+
+
+#mainNav ul.dropdownChild {
+    display: none;
+    border: 1px black solid;
+    padding: 10px;
+}
+
+#mainNav .dropdownList:hover .dropdownChild{
+    display: block;
+    position: absolute;
+}
+
+#mainNav .dropdownChild-Dog, .dropdownChild-Cat {
+    display: none;
+}
+
+#mainNav .dropdownDog:hover .dropdownChild-Dog{
+    display: block;
+}
+
+
+
+
+.leftSideMenu {
+    float: left;
+    margin-top: 20px;
+    margin-left: 13%;
+    width: 150px;
+    background-color: rgb(240,240,240);
+    border: 1px black solid;
+}
+
+
+/*         Body             */
+
+
+
+.articles {
+    background: #eee;
+    border: 0 solid #3d7e9a;
+    border-left-width: 5px!important;
+    margin-top: 20px;
+    display: inline-block;
+    margin-left: 1px;
+    width: 50%;
+    text-indent: 15px;
+}
+
+/*         Footer           */

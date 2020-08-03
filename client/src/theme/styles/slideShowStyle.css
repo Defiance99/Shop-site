@@ -1,0 +1,70 @@
+#aboutProducts {
+    margin: 3% auto;
+    max-width: 90%;
+}
+
+.mainSlideShow {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: black;
+}
+
+
+
+.slider_item {
+  min-width: 100%;
+}
+
+.sliderShowButton {
+  position: absolute;
+  top: 38%;
+  padding: 16px;
+  background-color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.sliderShowButton:hover {
+  text-decoration: underline;
+}
+
+.sliderShowButtonLeft {
+  margin-left: 5px;
+  border-radius: 5px 0 0 5px ;
+}
+
+.sliderShowButtonRight {
+  margin-right: 5px;
+  right: 0;
+  border-radius: 0 5px  5px 0;
+}
+
+
+
+
+.fastMenuSlideShow {
+  display: flex;
+  position: absolute;
+  left: 48%;
+  bottom: 2%;
+}
+
+.fastMenuSlideShow div {
+  padding: 9px;
+  border: black;
+  border-radius: 9px;
+  background-color: rgb(254,253,252);
+  opacity: 0.3;
+}
+
+.fastMenuSlideShow div:nth-child(n+2) {
+  margin-left: 5px;
+}
+
+.fastMenuSlideShow div:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}

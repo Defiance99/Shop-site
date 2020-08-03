@@ -1,0 +1,21 @@
+.grayBackground {
+    background-color: rgba(1,1,1,0.75);
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.formAuth {
+    background-color: orange;
+    position: absolute;
+    display: none;
+    width: 80%;
+    top: 10%;
+    height: 80%;
+    left: 10%;
+    z-index: 150;
+}

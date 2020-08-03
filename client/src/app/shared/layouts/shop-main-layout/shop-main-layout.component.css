@@ -1,0 +1,42 @@
+.active {
+  text-decoration: underline;
+}
+
+
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  background-color: rgb(51,51,51);
+  color: white;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 10%;
+  margin-left: 5%;
+  padding-bottom: 35px;
+}
+
+.footerContainer div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  line-height: 5px;
+}
+
+.footerContainer div > p:first-child {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.sidenav {
+  cursor: pointer;
+}
+
+.dropDownList li{
+  background-color: orange;
+  text-decoration: none;
+}

@@ -1,0 +1,139 @@
+<body>
+  <header class="Header">
+      <div class="Header_InnerContent row">
+          <div class="HeaderLeftBlock l3">
+              <a href="/catalog" title="Торговый портал">
+                  <img src="./assets/images/Header__Logo.svg" alt="Торговый портал shop.by" class="header-logo">
+              </a>
+          </div>
+          <div class="HeaderRightBlock l7">
+              <div class="searchLogoBlock">
+                  <input type="text" placeholder="Название товара" class="inputSearch">
+
+              </div>
+              <div class="favoriteLogo l1">
+                <a href="">
+                  <img src="./assets/images/logoSearch.jpg" alt="Поиск" class="searchLogo favoriteLogo-Class" width="30" height="30" title="Поиск">
+              </a>
+              </div>
+              <div class="favoriteLogo l1">
+                  <a href="">
+                      <img src="./assets/images/logoFavorite.jpg" alt="Избранное" class="favoriteLogo-Class" width="30" height="30" title="Избранное">
+                  </a>
+              </div>
+              <div class="authLogoContainerl1">
+                <div class="authLogo">
+                  <div>
+                    <a routerLink="/profile" routerLinkActive="activeLogo">
+                      <img src="./assets/images/logoAuth.png" alt="" class="authLogoImg" width="30" height="30" title="Войти">
+                  </a>
+                  </div>
+                  <div>
+                    <input type="button"
+                      value="Выйти"
+                      class="logoutBut btn-small waves-effect waves-light"
+                      (click)="triggerLogOut()"
+                      onclick="M.toast({html: 'Вы вышли'})"
+                      class="btn"
+                    >
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+  </header>
+
+  <nav>
+    <div class="nav-wrapper navigation">
+      <div class="navContainer">
+        <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down mainNavigationList">
+
+          <li class="navMenuLi"><a>Каталог товаров</a>
+            <ul class="mainCatalogProducts">
+              <li><a>Техника</a>
+                <ul>
+                    <li><a [routerLink]="['/category', 'Бытовая техника']" routerLinkActive="active">Бытовая Техника</a></li>
+                    <li><a [routerLink]="['/category', 'Автотехника']" routerLinkActive="active">Автотехника</a></li>
+                </ul>
+            </li>
+            <li><a [routerLink]="['/category', 'Одежда']" routerLinkActive="active">Одежда</a></li>
+            <li><a [routerLink]="['/category', 'Другое']" routerLinkActive="active">Другое</a></li>
+            </ul>
+          </li>
+          <li><a [routerLink]="['/createProducts']" routerLinkActive="active">Создать товар</a></li>
+          <li><a routerLink="/myProducts" routerLinkActive="active">Мои товары</a></li>
+          <li><a>Случайный товар</a></li>
+          <li><a href="/order" routerLinkActive="active">Корзина</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <ul class="collapsible">
+      <li class="dropDownList">
+        <div class="collapsible-header"><li class=""><a>Каталог товаров</a></div>
+        <div class="collapsible-body">
+          <li><a [routerLink]="['/category', 'Бытовая техника']" >Бытовая Техника</a></li>
+        </div>
+        <div class="collapsible-body">
+          <li><a [routerLink]="['/category', 'Автотехника']" >Автотехника</a></li>
+        </div>
+        <div class="collapsible-body">
+          <li><a [routerLink]="['/category', 'Одежда']" >Одежда</a></li>
+        </div>
+        <div class="collapsible-body">
+          <li><a [routerLink]="['/category', 'Другое']" >Другое</a></li>
+        </div>
+      </li>
+    </ul>
+    <li><a [routerLink]="['/createProducts']" routerLinkActive="active">Создать товар</a></li>
+    <li><a routerLink="/myProducts" routerLinkActive="active">Мои товары</a></li>
+    <li><a>Случайный товар</a></li>
+    <li><a [routerLink]="['/order']" routerLinkActive="active">Корзина</a></li>
+  </ul>
+  <ul id="slide-out" class="sidenav">
+    <li><a class="sidenav-close" href="#!"></a></li>
+  </ul>
+
+
+
+  <router-outlet></router-outlet>
+
+  <footer class="footer">
+    <div class="footerContainer">
+      <div class="logo">
+        <a routerLink="/catalog" title="Торговый портал">
+          <img src="./assets/images/Header__Logo.svg" alt="Торговый портал shop.by" class="footer-logo">
+      </a>
+      <span>Покупай у нас!</span>
+      </div>
+      <div>
+        <p>Статьи</p>
+        <a><p>Foo</p></a>
+        <a><p>Foo</p></a>
+        <a><p>Foo</p></a>
+        <a><p>Foo</p></a>
+      </div>
+      <div>
+        <p>Покупателю</p>
+        <a><p>Foo</p></a>
+        <a><p>Foo</p></a>
+        <a><p>Foo</p></a>
+        <a><p>Foo</p></a>
+      </div>
+      <div>
+        <p>Компании</p>
+        <a><p>Foo</p></a>
+        <a><p>Foo</p></a>
+        <a><p>Foo</p></a>
+        <a><p>Foo</p></a>
+      </div>
+      <div>
+        <p>Присоединяйся!</p>
+      </div>
+    </div>
+  </footer>
+
+</body>

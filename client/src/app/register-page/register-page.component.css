@@ -1,0 +1,39 @@
+label {
+  font-size: 1.5em;
+}
+
+.formRegisterContainer {
+  margin: 0 auto;
+}
+
+.formRegisterContainer p {
+  text-align: center;
+}
+
+.formRegisterContainer p > span:first-child {
+  color: rgb(255,78,51);
+  font-size: 3em;
+}
+
+.formRegisterContainer input {
+  font-size: 2em;
+  margin: 8px;
+}
+
+.divContainerForSpan {
+  position: absolute;
+  font-size: 0.15em;
+  margin-top:  -20px;
+  margin-left: 5px;
+}
+
+.errorText {
+  position: relative;
+  margin-top: 15px;
+  font-size: 0.4em;
+  color: red;
+}
+
+.helper-text {
+  position: absolute;
+}

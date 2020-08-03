@@ -1,0 +1,27 @@
+<main class="creatingProducts">
+
+  <div class="header-block">
+    <h4><span class="orange-text" *ngIf="!items">Ваша корзина пуста</span></h4>
+  </div>
+
+  <div class="orderContainer" *ngIf="items">
+    <ul class="collapsible popout">
+      <li *ngFor="let item of items">
+        <div class="collapsible-header">
+          <i class="material-icons">filter_drama</i>
+          <a [routerLink]="['/product', item.productId]">{{item.name}}</a>- Цена:{{item.cost}}
+        </div>
+        <div class="collapsible-body">
+          <span>{{item.description}}</span>
+          <br>
+          <p><input type="button" value="Удалить" class="btn waves-light" (click)="delProduct(this.item._id)"></p>
+        </div>
+      </li>
+    </ul>
+    <div class="inputContainer">
+      <input class="btn" value="Заказать" type="submit">
+    </div>
+  </div>
+</main>
+
+

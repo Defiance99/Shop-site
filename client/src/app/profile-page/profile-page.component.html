@@ -1,0 +1,56 @@
+<form class="creatingProducts" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="formContainer center-block">
+
+    <h5 class="center-align">Ваш профиль:</h5>
+    <br>
+
+    <!-- Name -->
+    <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
+      <input type="text"
+        id="icon_prefix_name"
+        class="validate"
+        formControlName="name"
+      >
+      <span class="helper-text red-text" *ngIf="form.get('name').invalid && form.get('name').touched">
+        <span *ngIf="form.get('name').errors['required']">- Поле name не должно быть пустым</span>
+      </span>
+    </div>
+
+    <!-- Login -->
+    <div class="input-field col s12">
+      <i class="material-icons prefix">person</i>
+      <input type="text"
+        id="icon_prefix_login"
+        class="validate"
+        formControlName="login"
+      >
+      <span class="helper-text red-text" *ngIf="form.get('login').invalid && form.get('login').touched">
+        <span *ngIf="form.get('login').errors['required']">- Поле login не должно быть пустым</span>
+      </span>
+    </div>
+
+    <!-- Password -->
+    <div class="input-field col s12">
+      <i class="material-icons prefix" *ngIf="edit; else locked">lock_open</i>
+      <ng-template #locked>
+        <i class="material-icons prefix">locked_open</i>
+      </ng-template>
+      <input type="password"
+        id="icon_prefixPass"
+        class="validate"
+        formControlName="password"
+      >
+      <span class="helper-text red-text" *ngIf="form.get('password').invalid && form.get('password').touched">
+        <span *ngIf="form.get('password').errors['required']">- Поле password не должно быть пустым</span>
+      </span>
+    </div>
+
+    <div class="center-align">
+      <a class="btn" (click)="editing()">Редактировать</a>
+      <input type="submit" class="displayNone" #submit [disabled]="!edit">
+      <a class="btn btnSave" (click)="triggerSubmit()">Сохранить</a>
+    </div>
+
+  </div>
+</form>

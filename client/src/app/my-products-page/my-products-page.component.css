@@ -1,0 +1,85 @@
+.creatingProducts {
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-width: 67%;
+  min-height: 500px;
+  margin-left: 15%;
+  margin-top: 2%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.row {
+  margin: 0 auto;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.controlPanel {
+  border: 1px black solid;
+  padding-bottom: 5px;
+}
+
+.listItemContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.listItem {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+
+
+.listItem li {
+  position: relative;
+  margin-top: 15px;
+  margin-left: 15px;
+  height: 200px;
+  line-height: 0.1em;
+  text-align: center;
+}
+
+.listItem li a {
+  cursor: pointer;
+}
+
+.listItem li a:hover {
+  text-decoration: underline;
+}
+
+.createProducts {
+  margin: 0 auto;
+}
+
+.w200 {
+  width: 200px;
+}
+
+.hoverable {
+  cursor: pointer;
+}
+
+.header-block {
+  display: flex;
+  justify-content: center;
+  margin: auto 0;
+}
+
+.orange-text {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: underline orange;
+}

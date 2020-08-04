@@ -32,6 +32,8 @@
     "assert": "^2.0.0",
     "concurrently": "^5.2.0",
     "mocha": "^8.0.1",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }

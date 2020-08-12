@@ -27,9 +27,12 @@
               "src/styles.css"
             ],
             "scripts": [
+              "src/assets/js/materialize.js",
+              "src/assets/js/materialize.min.js",
               "src/assets/js/slideShow.js",
               "src/assets/js/sideNavPlugin.js",
-              "src/assets/js/materializeForm.js"
+              "src/assets/js/collapsiblePopout.js",
+              "src/assets/js/collapsibleMenu.js"
             ]
           },
           "configurations": {

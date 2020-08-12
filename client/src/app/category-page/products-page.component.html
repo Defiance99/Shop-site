@@ -1,11 +1,32 @@
-<main class="creatingProducts">
-  <div class="listItemContainer">
-    <ul class="listItem">
-      <li *ngFor="let item of items" class="hoverable">
-        <p>{{item.category}}:</p>
-          <p><a [routerLink]="['/product', item._id]">{{item.name}}</a></p>
-          <img class="image" [src]="item.image" height="150" width="150" [routerLink]="['/product', item._id]">
-      </li>
-    </ul>
+<div class="mainContainer">
+  <div class="creatingProducts">
+
+    <ng-template #loading>
+      <div class="row">
+        <div class="col s12 center">
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <div class="listItemContainer" *ngIf="items$ | async as items; else loading">
+      <ul class="listItem">
+        <li *ngFor="let item of items" class="hoverable">
+          <p>{{item.category}}:</p>
+            <p><a [routerLink]="['/product', item._id]">{{item.name}}</a></p>
+            <img class="image" [src]="item.image" height="150" width="150" [routerLink]="['/product', item._id]">
+        </li>
+      </ul>
+    </div>
   </div>
-</main>
+</div>

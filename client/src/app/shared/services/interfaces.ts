@@ -1,8 +1,10 @@
 
 export interface User {
+  name?: string,
   login: string,
   password: string
 }
+
 
 export interface Product {
   name: string,
@@ -10,6 +12,7 @@ export interface Product {
   category: string,
   description?: string,
   image?: string
+  isEdit?: boolean
 }
 
 export interface Profile {
@@ -19,14 +22,18 @@ export interface Profile {
 }
 
 export interface Order {
-  date: Date,
   list: [
     {
+      _id: string,
+      productId: string,
       name: string,
-      quantity: number,
-      cost: number
+      cost: number,
+      description: string
     }
-  ]
+  ],
+  orderPrice?: number,
+  userId?: string,
+  completed?: boolean
 }
 
 export interface Message {

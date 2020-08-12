@@ -15,7 +15,7 @@ export class CreateProductsPageComponent implements OnInit, OnDestroy {
   @ViewChild('input') inputRef: ElementRef
   form: FormGroup
   image: File
-  imagePreview
+  imagePreview: any
   authSub: Subscription
 
 

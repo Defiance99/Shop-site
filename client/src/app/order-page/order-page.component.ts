@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core'
-import { MaterializeService } from '../shared/classes/materialilze.service'
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewChecked, AfterViewInit } from '@angular/core'
+import { MaterializeService, MaterialInstance} from '../shared/classes/materialilze.service'
 import { OrderService } from '../shared/services/order.service'
-import { UserOperationService } from '../shared/services/user-operation.service'
 import { Order } from '../shared/services/interfaces'
 
 @Component({
@@ -9,26 +8,63 @@ import { Order } from '../shared/services/interfaces'
   templateUrl: './order-page.component.html',
   styleUrls: ['./order-page.component.css']
 })
-export class OrderPageComponent implements OnInit {
+export class OrderPageComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  items: Order
+  @ViewChild("collapsible") collapsibleRef: ElementRef
+  @ViewChild("modal") modalRef: ElementRef
+  orderPrice: number = 0
+  items: any
+  modal: MaterialInstance
+  collapsible: MaterialInstance
 
-  constructor(private order: OrderService, private user: UserOperationService) { }
+  constructor(private order: OrderService) { }
 
   ngOnInit(): void {
-    this.user.getMyOrder().subscribe(
+    this.order.getMyOrder().subscribe(
       (data: Order) => {
-        this.items = data[0].list
+        if (data) this.items = data[0].list
+        else this.items = null
       },
       (err) => MaterializeService.toast(err.error.message)
     )
   }
 
+  ngOnDestroy() {
+    this.collapsible.destroy()
+    this.modal.destroy()
+  }
+
+  ngAfterViewInit() {
+    this.collapsible = MaterializeService.initCollapsiblePopout(this.collapsibleRef)
+    this.modal = MaterializeService.initModal(this.modalRef)
+  }
+
   delProduct(id: string) {
-    this.user.removeOrderProduct(id).subscribe(
-      (message) => MaterializeService.toast("Успешно удалено"),
+    this.order.removeOrderProduct(id).subscribe(
+      (message) => {
+        this.computePrice()
+        MaterializeService.toast(message.message)
+      },
       (err) => MaterializeService.toast(err.error.message)
     )
   }
 
+  computePrice() {
+    this.orderPrice = this.items.reduce(
+      (total: Number, product: any) => total += product.cost, 0)
+  }
+
+  checkout() {
+    this.order.checkout(this.orderPrice).subscribe(
+      (message) => {
+        MaterializeService.toast("Заказ выполнен")
+        this.clear()
+      },
+      (err) => MaterializeService.toast(err.error.message)
+    )
+  }
+
+  clear() {
+    this.items = null
+  }
 }

@@ -1,63 +1,66 @@
-<form class="creatingProducts" [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div class="formRegisterContainer">
-    <p><span>Регистрация</span></p>
+<div class="mainContainer">
+  <form class="creatingProducts" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="formRegisterContainer">
+      <p><span>Регистрация</span></p>
 
-    <!-- Name -->
-    <div class="row">
-      <div class="input-field inline">
-        <label for="name_inline">Ваше имя</label>
-        <input type="text"
-          id="name_inline"
-          class="validate"
-          formControlName="name"
-          [ngClass]="{'invalid': form.get('name').invalid && form.get('name').touched}"
-        >
-        <span class="red-text helper-text" *ngIf="form.get('name').invalid && form.get('name').touched">
-          <span *ngIf="form.get('name').errors['required']">- Поле name не должно быть пустым</span>
-          <span *ngIf="form.get('name').errors['name']">- Введите правильный Логин</span>
-        </span>
+      <!-- Name -->
+      <div class="row">
+        <div class="input-field inline">
+          <label for="name_inline">Ваше имя</label>
+          <input type="text"
+            id="name_inline"
+            class="validate"
+            formControlName="name"
+            [ngClass]="{'invalid': form.get('name').invalid && form.get('name').touched}"
+          >
+          <span class="red-text helper-text" *ngIf="form.get('name').invalid && form.get('name').touched">
+            <span *ngIf="form.get('name').errors['required']">- Поле name не должно быть пустым</span>
+            <span *ngIf="form.get('name').errors['name']">- Введите правильный Логин</span>
+          </span>
+        </div>
       </div>
-    </div>
 
-    <!-- Login -->
-    <div class="row">
-      <div class="input-field inline">
-        <input type="text"
-          id="login_inline"
-          class="validate"
-          formControlName="login"
-          [ngClass]="{'invalid': form.get('login').invalid && form.get('login').touched}"
-        >
-        <label for="login_inline">Логин:</label>
-        <span class="red-text helper-text" *ngIf="form.get('login').invalid && form.get('login').touched">
-          <span *ngIf="form.get('login').errors['required']">- Поле login не должно быть пустым</span>
-        </span>
+      <!-- Login -->
+      <div class="row">
+        <div class="input-field inline">
+          <input type="text"
+            id="login_inline"
+            class="validate"
+            formControlName="login"
+            [ngClass]="{'invalid': form.get('login').invalid && form.get('login').touched}"
+          >
+          <label for="login_inline">Логин:</label>
+          <span class="red-text helper-text" *ngIf="form.get('login').invalid && form.get('login').touched">
+            <span *ngIf="form.get('login').errors['required']">- Поле login не должно быть пустым</span>
+          </span>
+        </div>
       </div>
-    </div>
 
 
-    <!-- Password -->
-    <div class="row">
-      <div class="input-field inline">
-        <input type="text"
-          id="password_inline"
-          class="validate"
-          formControlName="password"
-          [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched}"
-        >
-        <label for="password_inline">Пароль:</label>
-        <span class="red-text helper-text" *ngIf="form.get('password').invalid && form.get('password').touched">
-          <span *ngIf="form.get('password').errors['required']">- Пароль не должен быть пустым</span>
-        </span>
+      <!-- Password -->
+      <div class="row">
+        <div class="input-field inline">
+          <input type="text"
+            id="password_inline"
+            class="validate"
+            formControlName="password"
+            [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched}"
+          >
+          <label for="password_inline">Пароль:</label>
+          <span class="red-text helper-text" *ngIf="form.get('password').invalid && form.get('password').touched">
+            <span *ngIf="form.get('password').errors['required']">- Пароль не должен быть пустым</span>
+          </span>
+        </div>
       </div>
-    </div>
 
-    <p>
-      <input type="submit"
-        class="btn"
-        value="Зарегистроваться"
-        [disabled]="form.invalid || form.disabled"
-      >
-    </p>
-  </div>
-</form>
+      <p>
+        <input type="submit"
+          class="btn"
+          value="Зарегистроваться"
+          [disabled]="form.invalid || form.disabled"
+        >
+      </p>
+    </div>
+  </form>
+
+</div>

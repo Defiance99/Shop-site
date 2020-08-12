@@ -56,19 +56,38 @@
         <li><a routerLink="/myProducts" routerLinkActive="active">Мои товары</a></li>
         <li><a>Случайный товар</a></li>
         <li><a [routerLink]="['/order']" routerLinkActive="active">Корзина</a></li>
+        <li><a [routerLink]="['/historyOrders']" routerLinkActive="active">История</a></li>
       </ul>
     </div>
   </div>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a [routerLink]="['/category', 'Бытовая техника']" routerLinkActive="active">Бытовая Техника</a></li>
-    <li><a [routerLink]="['/category', 'Автотехника']" routerLinkActive="active">Автотехника</a></li>
-    <li><a [routerLink]="['/category', 'Одежда']" routerLinkActive="active">Одежда</a></li>
-    <li><a [routerLink]="['/category', 'Другое']" routerLinkActive="active">Другое</a></li>
+    <ul class="collapsible">
+      <li class="dropDownList">
+        <div class="collapsible-header"><li class=""><a>Каталог товаров</a></div>
+        <div class="collapsible-body">
+          <li><a [routerLink]="['/category', 'Бытовая техника']" >Бытовая Техника</a></li>
+        </div>
+        <div class="collapsible-body">
+          <li><a [routerLink]="['/category', 'Автотехника']" >Автотехника</a></li>
+        </div>
+        <div class="collapsible-body">
+          <li><a [routerLink]="['/category', 'Одежда']" >Одежда</a></li>
+        </div>
+        <div class="collapsible-body">
+          <li><a [routerLink]="['/category', 'Другое']" >Другое</a></li>
+        </div>
+      </li>
+    </ul>
+    <li><a [routerLink]="['/createProducts']" routerLinkActive="active">Создать товар</a></li>
+    <li><a routerLink="/myProducts" routerLinkActive="active">Мои товары</a></li>
+    <li><a>Случайный товар</a></li>
+    <li><a [routerLink]="['/order']" routerLinkActive="active">Корзина</a></li>
+    <li><a [routerLink]="['/historyOrders']" routerLinkActive="active">История</a></li>
   </ul>
   <ul id="slide-out" class="sidenav">
     <li><a class="sidenav-close" href="#!"></a></li>
-</ul>
+  </ul>
 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
 </nav>

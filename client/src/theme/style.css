@@ -34,6 +34,11 @@ a {
     width: 250px;
     height: 60px;
 }
+@media (max-width: 450px) {
+  .header-logo  {
+    width: 200px;
+  }
+}
 
 .searchLogoBlock {
    width: 85%;
@@ -45,6 +50,11 @@ a {
     border: 2px orange solid;
     font-size: 1.5em;
     vertical-align: bottom;
+}
+@media (max-width: 450px) {
+  .searchLogoBlock input  {
+    display: none;
+  }
 }
 
 .searchLogo {

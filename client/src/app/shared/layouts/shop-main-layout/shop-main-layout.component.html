@@ -64,7 +64,8 @@
           <li><a [routerLink]="['/createProducts']" routerLinkActive="active">Создать товар</a></li>
           <li><a routerLink="/myProducts" routerLinkActive="active">Мои товары</a></li>
           <li><a>Случайный товар</a></li>
-          <li><a href="/order" routerLinkActive="active">Корзина</a></li>
+          <li><a routerLink="/order" routerLinkActive="active">Корзина</a></li>
+          <li><a [routerLink]="['/historyOrders']" routerLinkActive="active">История</a></li>
         </ul>
       </div>
     </div>
@@ -92,6 +93,7 @@
     <li><a routerLink="/myProducts" routerLinkActive="active">Мои товары</a></li>
     <li><a>Случайный товар</a></li>
     <li><a [routerLink]="['/order']" routerLinkActive="active">Корзина</a></li>
+    <li><a [routerLink]="['/historyOrders']" routerLinkActive="active">История</a></li>
   </ul>
   <ul id="slide-out" class="sidenav">
     <li><a class="sidenav-close" href="#!"></a></li>

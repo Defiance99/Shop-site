@@ -6,8 +6,8 @@ import { environment } from './environments/environment';
 import './assets/js/materialize.js'
 
 if (environment.production) {
-  enableProdMode();
+  enableProdMode()
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+  .catch(err => console.error(err))

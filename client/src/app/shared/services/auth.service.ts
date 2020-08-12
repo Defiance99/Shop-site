@@ -10,7 +10,7 @@ import { Router } from '@angular/router'
 @Injectable()
 export class AuthService {
 
-  private token = null
+  private token: string = null
 
 
   constructor(private http: HttpClient) {
@@ -31,7 +31,7 @@ export class AuthService {
       )
   }
 
-  updateUser(user) {
+  updateUser(user: User) {
     return this.http.patch("/api/user/updateUserInfo", user)
   }
 

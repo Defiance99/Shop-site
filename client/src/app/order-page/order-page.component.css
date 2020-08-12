@@ -1,4 +1,4 @@
-.orderContainer {
+.collapsible {
   width: 100%;
 }
 
@@ -13,14 +13,38 @@ a:hover {
 }
 
 .header-block {
+  position: absolute;
   display: flex;
-  margin: auto;
+  justify-content: center;
+  left: 0;
+  width: 100%;
 }
 
 .orange-text {
-  display: inline-block;
+  display: block;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-decoration: underline orange;
+}
+
+.orange-text p {
+  font-size: 1.5em;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.secondary-content {
+  cursor: pointer;
+}
+
+span.secondary-content {
+  font-size: 1.5em;
+}
+
+.preloader-wrapper {
+  left: 49%;
+  top: 20px;
 }

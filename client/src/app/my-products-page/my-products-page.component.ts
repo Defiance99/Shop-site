@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router'
 import { UserOperationService } from '../shared/services/user-operation.service'
 import { Product } from '../shared/services/interfaces'
 import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -12,15 +13,12 @@ import { switchMap } from 'rxjs/operators';
 })
 export class MyProductsPageComponent implements OnInit {
 
-  items: Product
+  items$: Observable<Product[]>
 
-  constructor(private crud: UserOperationService) {}
+  constructor(private user: UserOperationService) {}
 
   ngOnInit(): void {
-    this.crud.getMyProducts().subscribe(
-      (data: Product) => this.items = data,
-      (err) => console.log(err)
-      )
+    this.items$ = this.user.getMyProducts()
   }
 
 }

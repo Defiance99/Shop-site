@@ -1,0 +1,56 @@
+<div class="mainContainer">
+  <div class="creatingProducts">
+    <div class="historyContainer">
+
+      <ng-template #loading>
+        <div class="row">
+          <div class="col s12 center">
+            <div class="preloader-wrapper big active">
+              <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+
+      <div class="collapsible popout" #collapsible>
+        <ul *ngIf="orders$ | async as orders; else loading">
+          <div *ngIf="orders.length != 0; else empty">
+            <li  *ngFor="let order of orders; let i = index">
+              <div class="collapsible-header" (click)="open(i)">
+                Номер заказа: {{order.orderNumber}} <br>
+                Цена заказа: {{order.orderPrice | currency}}   <br>
+                Дата заказа: {{order.date | date:"dd/MM/yyyy"}}
+              </div>
+
+              <ul class="collapsible-body collection">
+                <li>123</li>
+                <li class="collection-item" *ngFor="let item of orders[list]">
+                  <div>
+                    Продукт: <a [routerLink]="['/product', this.item.productId]" class="navLink">{{item.name}}</a>. <br>
+                    Цена: {{item.cost | currency}}
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </div>
+
+          <ng-template #empty>
+            <div class="header-block">
+              <h4><span class="orange-text">Ваша история пуста</span></h4>
+            </div>
+          </ng-template>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+</div>

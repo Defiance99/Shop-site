@@ -12,6 +12,6 @@ productsRouter.get("/getProducts", products.getProducts);
 productsRouter.get("/productByCategory/:category", products.productByCategory);
 productsRouter.get("/randomProduct", passport.authenticate('jwt', {session: false}), products.getRandomProduct);
 productsRouter.get("/:id", passport.authenticate('jwt', {session: false}), products.productById);
-
+productsRouter.delete("/:id", passport.authenticate('jwt', {session: false}), products.removeProduct);
 
 module.exports = productsRouter;

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Product } from '../shared/services/interfaces';
-import { CrudDataServerService } from '../shared/services/crud-data-server.service';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
-import {Subscription} from 'rxjs';
+import { Component, OnInit, AfterViewInit } from '@angular/core'
+import { Product } from '../shared/services/interfaces'
+import { CrudDataServerService } from '../shared/services/crud-data-server.service'
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router'
+import {Subscription, Observable} from 'rxjs'
+import { switchMap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-products-page',
@@ -11,16 +12,25 @@ import {Subscription} from 'rxjs';
 })
 export class CategoryPageComponent implements OnInit {
 
-  items: Product
+  items$: Observable<Product[]>
+  category: string
 
-  constructor(private crud: CrudDataServerService, private route: ActivatedRoute) {}
+  constructor(private crud: CrudDataServerService, private route: ActivatedRoute) {
+    /* subscription = route.params.subscribe(params => this.category = params['categoryName']); */
+  }
 
   ngOnInit(): void {
-    let category = this.route.snapshot.paramMap.get('categoryName')
-    this.crud.getProductsByCategory(category).subscribe(
-      (data: Product) => this.items = data,
-      (err) => console.log(err)
-    )
+    /* let category = this.route.snapshot.paramMap.get('categoryName') */
+    /* this.route.params.subscribe(params => this.category = params['categoryName']); */
+
+    this.route.paramMap.pipe(
+      switchMap(params => params.getAll('categoryName'))
+      )
+      .subscribe(data => {
+        this.category = data
+        this.items$ = this.crud.getProductsByCategory(this.category)
+      })
   }
+
 
 }

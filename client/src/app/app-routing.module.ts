@@ -10,11 +10,11 @@ import { AuthPageComponent } from './auth-page/auth-page.component'
 import { RegisterPageComponent } from './register-page/register-page.component'
 import { MyProductsPageComponent } from './my-products-page/my-products-page.component'
 import { AuthGuard } from './shared/classes/auth.guard'
-import { ProductFormPageComponent } from './my-product-form-page/product-form-page.component'
 import { CategoryPageComponent } from './category-page/products-page.component'
 import { ProductPageComponent } from './product-page/product-page.component'
 import { OrderPageComponent } from './order-page/order-page.component'
 import { ProfilePageComponent } from './profile-page/profile-page.component'
+import { HistoryOrdersPageComponent } from './history-orders-page/history-orders-page.component'
 
 
 const routes: Routes = [
@@ -29,11 +29,11 @@ const routes: Routes = [
     {path: 'catalog', component: MainPageComponent},
     {path: 'createProducts', component: CreateProductsPageComponent},
     {path: 'myProducts', component: MyProductsPageComponent},
-    {path: 'myProduct/:id', component: ProductFormPageComponent},
     {path: 'profile', component: ProfilePageComponent},
     {path: 'category/:categoryName', component: CategoryPageComponent},
     {path: 'product/:id', component: ProductPageComponent},
     {path: 'order', component: OrderPageComponent},
+    {path: 'historyOrders', component: HistoryOrdersPageComponent},
   ]}
 ];
 

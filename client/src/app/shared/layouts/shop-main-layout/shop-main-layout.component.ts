@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
-import { Subscription } from 'rxjs';
-import { switchMap } from 'rxjs/operators'
+import { Subscription } from 'rxjs'
 import { AuthService } from '../../services/auth.service'
+import { MaterializeService } from '../../classes/materialilze.service'
+import { switchMap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-shop-main-layout',
@@ -11,14 +12,13 @@ import { AuthService } from '../../services/auth.service'
 })
 export class ShopMainLayoutComponent implements OnInit {
 
-  login
+  login: any
 
-  constructor(private auth: AuthService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private auth: AuthService, private route: ActivatedRoute, private router: Router,) {
+  }
 
   ngOnInit() {
-    this.route.paramMap.pipe(
-      switchMap(params => params.getAll('id'))
-      )
+      MaterializeService.collapsible()
     }
 
 

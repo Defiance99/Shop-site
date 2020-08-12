@@ -18,7 +18,10 @@ const orderShema = new Schema({
     },
     completed: {
         type: Boolean
-    }
+    },
+    orderPrice: Number,
+    orderNumber: Number,
+    date: Date
 });
 
 

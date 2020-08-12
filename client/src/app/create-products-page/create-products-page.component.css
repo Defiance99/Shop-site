@@ -1,6 +1,5 @@
 * {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.16em;
 
 }
 
@@ -22,13 +21,20 @@ textarea {
   margin-top: 2%;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+@media (max-width: 650px) {
+  .creatingProducts {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
 
 .invalid {
   outline: 2px red solid;
 }
 
 .errorText {
-  position: absolute;
+  position: relative;
   /* font-size: 0.4em; */
   margin-left: 5px;
   color: red;
@@ -50,7 +56,8 @@ textarea {
 .imagePreviewBlock {
   position: absolute;
 }
-@media (max-width: 1500px) {
+
+@media (max-width: 1200px) {
   .imagePreviewBlock {display: none;}
 }
 
@@ -64,10 +71,6 @@ textarea {
 }
 
 .browser-default {
-  font-size: initial;
-}
-
-.fontSizeDefault {
   font-size: initial;
 }
 

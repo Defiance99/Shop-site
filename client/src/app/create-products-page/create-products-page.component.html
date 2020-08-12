@@ -1,80 +1,88 @@
-<form class="creatingProducts"
-    [formGroup]="form"
-    (ngSubmit)="onSubmit()"
->
-  <div class="createProducts">
+<div class="mainContainer">
+  <form class="creatingProducts"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+  >
 
-    <!-- Name -->
-    <div class="input-field col s12">
-      <input type="text"
-            name="nameProduct"
-            maxlength="20"
-            formControlName="nameProduct"
-            id="autocomplete-input"
-            class="autocomplete-input autocomplete"
-            [ngClass]="{'invalid': form.get('nameProduct').invalid && form.get('nameProduct').touched}"
-      >
-      <label for="autocomplete-input">Введите название продутка:</label>
-      <span class="errorText helper-text" *ngIf="form.get('nameProduct').invalid && form.get('nameProduct').touched">- Введите имя продутка</span>
+    <div class="createProducts">
+
+      <!-- Name -->
+      <div class="input-field col s12">
+        <input type="text"
+              name="nameProduct"
+              maxlength="20"
+              formControlName="nameProduct"
+              id="autocomplete-input"
+              class="autocomplete-input autocomplete"
+              [ngClass]="{'invalid': form.get('nameProduct').invalid && form.get('nameProduct').touched}"
+        >
+        <label for="autocomplete-input">Введите название продутка:</label>
+        <span class="errorText helper-text" *ngIf="form.get('nameProduct').invalid && form.get('nameProduct').touched">- Введите имя продутка</span>
+      </div>
+
+      <!-- Category -->
+      <p>
+        <span class="fontSizeDefault">Выберите категорию товара:</span>
+        <select formControlName="category" class="browser-default">
+          <optgroup label="Техника">
+            <option>Бытовая техника</option>
+            <option>Автотехника</option>
+          </optgroup>
+          <option>Одежда</option>
+          <option selected>Другое</option>
+        </select>
+      </p>
+
+      <!-- Cost -->
+      <div class="input-field col l6">
+        <input type="number"
+            min="0"
+            formControlName="cost"
+            id="autocomplete-input-cost"
+            [ngClass]="{'invalid': form.get('cost').invalid && form.get('cost').touched}"
+        >
+        <label for="autocomplete-input-cost">Укажите цену: $</label>
+        <span class="errorText helper-text" *ngIf="form.get('cost').invalid && form.get('cost').touched">- Введите цену продутка</span>
+      </div>
+
+      <!-- Image -->
+      <p>
+        <input type="file"
+            name="image"
+            formControlName="image"
+            class="dn"
+            (change)="onFileUpload($event)"
+            #input
+        >
+        <input type="button"
+            value="Загрузить изображение"
+            class=" waves-light btn"
+            (click)="triggerClick()"
+            [disabled]="form.disabled"
+        >
+      </p>
+
+      <!-- Describe -->
+      <p>Описание товара:</p>
+      <textarea name="describingProduct" cols="45" formControlName="describe" class="textArea" maxlength="430"></textarea>
+
+      <!-- Submit -->
+      <p>
+        <input type="submit"
+            class="btn waves-effect waves-light"
+            value="Создать"
+            [disabled]="form.invalid || form.invalid"
+        >
+      </p>
     </div>
 
-    <!-- Category -->
-    <p><span class="fontSizeDefault">Выберите категорию товара:</span> <select formControlName="category" class="browser-default">
-      <optgroup label="Техника">
-        <option>Бытовая техника</option>
-        <option>Автотехника</option>
-      </optgroup>
-      <option>Одежда</option>
-      <option selected>Другое</option>
-    </select></p>
-
-    <!-- Cost -->
-    <div class="input-field col l6">
-      <input type="number"
-          min="0"
-          formControlName="cost"
-          id="autocomplete-input-cost"
-          [ngClass]="{'invalid': form.get('cost').invalid && form.get('cost').touched}"
+    <div class="imagePreviewBlock">
+      <img
+        class="imgPreview"
+        [src]="imagePreview"
+        *ngIf="imagePreview"
       >
-      <label for="autocomplete-input-cost">Укажите цену:</label>
-      <span class="errorText helper-text" *ngIf="form.get('cost').invalid && form.get('cost').touched">- Введите цену продутка</span>
     </div>
+  </form>
 
-    <!-- Image -->
-    <p>
-      <input type="file"
-          name="image"
-          formControlName="image"
-          class="dn"
-          (change)="onFileUpload($event)"
-          #input
-      >
-      <input type="button"
-          value="Загрузить изображение"
-          class=" waves-light btn"
-          (click)="triggerClick()"
-          [disabled]="form.disabled"
-      >
-    </p>
-
-    <!-- Describe -->
-    <p>Описание товара:</p>
-    <textarea name="describingProduct" cols="45" formControlName="describe" class="textArea" maxlength="230"></textarea>
-
-    <!-- Submit -->
-    <p>
-      <input type="submit"
-          class="btn waves-effect waves-light"
-          value="Создать"
-          [disabled]="form.invalid || form.invalid"
-      >
-    </p>
-  </div>
-  <div class="imagePreviewBlock">
-    <img
-      class="imgPreview"
-      [src]="imagePreview"
-      *ngIf="imagePreview"
-    >
-  </div>
-</form>
+</div>

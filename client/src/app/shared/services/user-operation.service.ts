@@ -13,7 +13,7 @@ export class UserOperationService {
 
   constructor(private http: HttpClient) {}
 
-  create(form, image): Observable<any> {
+  create(form: any, image: File): Observable<any> {
     let fd = new FormData()
 
     if(form.image) {
@@ -28,15 +28,19 @@ export class UserOperationService {
     return this.http.post<Product>('/api/product/createProducts', fd)
   }
 
-  getMyProducts() {
-    return this.http.get<Product>('/api/product/myProducts')
+  getMyProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>('/api/product/myProducts')
   }
 
   myProductById(id: string): Observable<Product> {
     return this.http.get<Product>(`/api/product/myProduct/${id}`)
   }
 
-  getProductById(id: string): Observable<Product> {
+  /* getProductById(id: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`/api/product/${id}`)
+  } */
+
+  getProductById(id: string) {
     return this.http.get<Product>(`/api/product/${id}`)
   }
 
@@ -44,11 +48,8 @@ export class UserOperationService {
     return this.http.get<Profile>("/api/user/userInfo")
   }
 
-  getMyOrder() {
-    return this.http.get("/api/order/myOrder")
+  delete(id: string): Observable<Message> {
+    return this.http.delete<Message>(`/api/product/${id}`)
   }
 
-  removeOrderProduct(id: string): Observable<Message>{
-    return this.http.delete<Message>(`/api/order/myOrder/${id}`)
-  }
 }

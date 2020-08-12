@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core'
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core'
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { Router, ActivatedRoute, Params } from '@angular/router'
-import { Subscription } from 'rxjs'
+import { Subscription, Observable } from 'rxjs'
 import { MaterializeService } from '../shared/classes/materialilze.service'
 import { UserOperationService } from '../shared/services/user-operation.service'
 import { AuthService } from '../shared/services/auth.service'
@@ -14,12 +14,10 @@ import { Profile } from '../shared/services/interfaces'
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
 
-  @ViewChild('submit') submitRef: ElementRef
   form: FormGroup
-  upSub
+  upSub: Subscription
   edit: boolean = false
   userInfo: Profile
-
 
   constructor(private userService: UserOperationService, private auth: AuthService, private router: Router) { }
 
@@ -28,7 +26,6 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
       (data) => {
         this.userInfo = data[0]
         this.initForm()
-        console.log(this.userInfo)
       }
     )
   }
@@ -41,14 +38,16 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
   initForm() {
     this.form = new FormGroup({
-      password: new FormControl({value: "password", disabled: true}, [Validators.required, Validators.minLength(2)]),
-      login: new FormControl({value: this.userInfo.login, disabled: true}, [Validators.required, Validators.minLength(2)]),
-      name: new FormControl({value: this.userInfo.name, disabled: true}, [Validators.required, Validators.minLength(2)])
+      password: new FormControl({value: null, disabled: true}, [Validators.required, Validators.minLength(2)]),
+      login: new FormControl({value: null, disabled: true}, [Validators.required, Validators.minLength(2)]),
+      name: new FormControl({value: null, disabled: true}, [Validators.required, Validators.minLength(2)])
     })
-  }
 
-  triggerSubmit() {
-    this.submitRef.nativeElement.click()
+    this.form.patchValue({
+      "name": this.userInfo.name,
+      "login": this.userInfo.login,
+      "password": "pass"
+    })
   }
 
   editing() {

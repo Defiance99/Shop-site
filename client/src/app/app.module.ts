@@ -16,12 +16,12 @@ import { ShopMainLayoutComponent } from './shared/layouts/shop-main-layout/shop-
 import { UserOperationService } from './shared/services/user-operation.service'
 import { CrudDataServerService } from './shared/services/crud-data-server.service'
 import { MyProductsPageComponent } from './my-products-page/my-products-page.component'
-import { ProductFormPageComponent } from './my-product-form-page/product-form-page.component'
 import { CategoryPageComponent } from './category-page/products-page.component'
 import { ProductPageComponent } from './product-page/product-page.component'
 import { OrderPageComponent } from './order-page/order-page.component'
 import { OrderService } from './shared/services/order.service'
-import { ProfilePageComponent } from './profile-page/profile-page.component'
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { HistoryOrdersPageComponent } from './history-orders-page/history-orders-page.component'
 
 @NgModule({
   declarations: [
@@ -33,11 +33,11 @@ import { ProfilePageComponent } from './profile-page/profile-page.component'
     RegisterPageComponent,
     ShopMainLayoutComponent,
     MyProductsPageComponent,
-    ProductFormPageComponent,
     CategoryPageComponent,
     ProductPageComponent,
     OrderPageComponent,
     ProfilePageComponent,
+    HistoryOrdersPageComponent,
   ],
   imports: [
     BrowserModule,

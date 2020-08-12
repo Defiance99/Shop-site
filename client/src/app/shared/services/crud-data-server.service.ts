@@ -16,11 +16,11 @@ export class CrudDataServerService {
 
   }
 
-  getProducts() {
-    return this.http.get('/api/product/getProducts')
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>('/api/product/getProducts')
   }
 
-  getProductsByCategory(category) {
-    return this.http.get<Product>(`/api/product/productByCategory/${category}`)
+  getProductsByCategory(category: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`/api/product/productByCategory/${category}`)
   }
 }

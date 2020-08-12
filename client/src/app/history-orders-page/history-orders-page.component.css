@@ -1,0 +1,33 @@
+@media (max-width: 650px) {
+  .creatingProducts {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.historyContainer {
+  width: 100%;
+}
+
+.header-block {
+  display: flex;
+  justify-content: center;
+  margin: auto 0;
+}
+
+.orange-text {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: underline orange;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+}
+
+.collapsible-body div {
+  margin-left: 15px;
+}

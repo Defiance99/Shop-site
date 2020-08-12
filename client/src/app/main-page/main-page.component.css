@@ -52,3 +52,7 @@
 .sliderShowButton {
   cursor: pointer;
 }
+
+.row {
+  margin-top: 155px;
+}

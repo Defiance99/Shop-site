@@ -2,6 +2,7 @@ const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const jwtDecode = require('jwt-decode');
 const User = require("../models/User");
+const keys = require("../config/keys")
 
 exports.postFormRegister = async function(req,res) {
 
@@ -39,14 +40,14 @@ exports.postFormRegister = async function(req,res) {
 
     if (userInfo) {
         console.log(userInfo);
-        const resultOfCheckingPasswords = bcryptjs.compareSync(req.body.password, userInfo.password);
+        const resultOfCheckingPasswords = await bcryptjs.compareSync(req.body.password, userInfo.password);
 
         if (resultOfCheckingPasswords) { 
 
             const token = jwt.sign({
                 login: userInfo.login,
                 id: userInfo._id,
-            }, "secretKey-HATER", {expiresIn: 60 * 60});
+            }, keys.jwt, {expiresIn: 60 * 60});
             
             console.log("HELLO USER!");
             res.status(200).json({

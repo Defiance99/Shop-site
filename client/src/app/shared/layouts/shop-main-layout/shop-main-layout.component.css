@@ -1,7 +1,7 @@
 
-.active {
+/* .active {
   text-decoration: underline;
-}
+} */
 
 
 .footer {
@@ -40,7 +40,15 @@
   cursor: pointer;
 }
 
-.dropDownList li{
-  background-color: orange;
-  text-decoration: none;
+.dropDownList div:last-child{
+  border-bottom: 1px black solid;
 }
+
+.dropDownList div a{
+  margin-left: 10%;
+}
+
+.dropDownList div:first-child a{
+  margin-left: inherit;
+}
+

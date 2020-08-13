@@ -20,7 +20,7 @@ export class AuthPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.form = new FormGroup({
       login: new FormControl(null, [Validators.required, Validators.minLength(5)]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(5)])
+      password: new FormControl(null, [Validators.required, Validators.minLength(4)])
     })
 
     this.route.queryParams.subscribe( (params: Params) => {

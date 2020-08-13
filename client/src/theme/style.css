@@ -13,7 +13,6 @@ a {
 .Header_InnerContent {
     display: flex;
     justify-content: space-between;
-
     width: 90%;
     margin-top: 50px;
     margin-left: 5%;
@@ -26,6 +25,7 @@ a {
 }
 @media (max-width: 700px) {
   .Header_InnerContent {
+    flex-direction: column;
     width: 100%;
     margin: 0;
   }
@@ -36,20 +36,29 @@ a {
     align-items: center;
     width: 90%;
 }
+@media (max-width: 700px) {
+  .HeaderRightBlock {
+    margin: 25px auto;
+  }
+}
 
 .HeaderRightBlock div {
 
     margin: auto;
 }
 
+.HeaderLeftBlock {
+
+}
+@media (max-width: 700px) {
+  .HeaderLeftBlock  {
+    margin: 25px auto;
+  }
+}
+
 .header-logo {
     width: 250px;
     height: 60px;
-}
-@media (max-width: 450px) {
-  .header-logo  {
-    width: 200px;
-  }
 }
 
 .searchLogoBlock {
@@ -63,11 +72,11 @@ a {
     font-size: 1.5em;
     vertical-align: bottom;
 }
-@media (max-width: 450px) {
-  .searchLogoBlock input  {
-    display: none;
+/* @media (max-width: 700px) {
+  .searchLogoBlock {
+    margin-left: 20px;
   }
-}
+} */
 
 .searchLogo {
   opacity: 0.6;

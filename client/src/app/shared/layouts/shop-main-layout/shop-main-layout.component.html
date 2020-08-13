@@ -2,7 +2,7 @@
   <header class="Header">
       <div class="Header_InnerContent row">
           <div class="HeaderLeftBlock l3">
-              <a href="/catalog" title="Торговый портал">
+              <a routerLink="/catalog" title="Торговый портал">
                   <img src="./assets/images/Header__Logo.svg" alt="Торговый портал shop.by" class="header-logo">
               </a>
           </div>
@@ -71,8 +71,8 @@
     </div>
   </nav>
 
-  <ul class="sidenav" id="mobile-demo">
-    <ul class="collapsible">
+  <ul class="sidenav" id="mobile-demo" #sidenav>
+    <ul class="collapsible" #collapsible>
       <li class="dropDownList">
         <div class="collapsible-header"><li class=""><a>Каталог товаров</a></div>
         <div class="collapsible-body">

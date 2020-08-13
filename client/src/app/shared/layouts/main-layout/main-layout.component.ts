@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
+import { MaterialInstance, MaterializeService } from '../../classes/materialilze.service'
 
 
 @Component({
@@ -6,16 +7,27 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.css']
 })
-export class MainLayoutComponent  {
+export class MainLayoutComponent implements OnInit {
 
+  @ViewChild("sidenav") sidenavRef: ElementRef
+  @ViewChild("collapsible") collapsibleRef: ElementRef
+  sidenav: MaterialInstance
+  collapsible: MaterialInstance
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
   }
 
-  showFormAuth() {
+  ngOnDestroy() {
+    /* this.sidenav.destroy()
+    this.collapsible.destroy() */
+  }
 
+  ngAfterViewInit() {
+    this.collapsible = MaterializeService.initCollapsiblePopout(this.collapsibleRef)
+    this.sidenav = MaterializeService.initSideNav(this.sidenavRef)
   }
 
 

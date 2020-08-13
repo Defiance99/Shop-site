@@ -52,5 +52,9 @@ export class MaterializeService {
     return M.Collapsible.init(ref.nativeElement)
   }
 
+  static initSideNav(ref: ElementRef): MaterialInstance {
+    return M.Sidenav.init(ref.nativeElement)
+  }
+
 }
 

@@ -12,16 +12,17 @@ textarea {
 }
 
 .creatingProducts {
-  background-color: white;
   display: flex;
+  vertical-align: auto;
   padding: 20px;
   width: 67%;
   min-height: 500px;
   margin-left: 15%;
-  margin-top: 2%;
+  margin-top: 10%;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background-color: white;
 }
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .creatingProducts {
     width: 100%;
     margin-left: 0;

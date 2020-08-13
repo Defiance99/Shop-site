@@ -1,12 +1,13 @@
-.active {
+
+/* .active {
   text-decoration: underline;
-}
+} */
 
 
 .footer {
-  position: relative;
   width: 100%;
-  min-height: 200px;
+  margin-top: 100px;
+  min-height: 150px;
   background-color: rgb(51,51,51);
   color: white;
 }
@@ -15,9 +16,7 @@
   display: flex;
   justify-content: space-between;
   width: 90%;
-  margin-top: 10%;
   margin-left: 5%;
-  padding-bottom: 35px;
 }
 
 .footerContainer div {
@@ -36,3 +35,20 @@
     display: none;
   }
 }
+
+.sidenav {
+  cursor: pointer;
+}
+
+.dropDownList div:last-child{
+  border-bottom: 1px black solid;
+}
+
+.dropDownList div a{
+  margin-left: 10%;
+}
+
+.dropDownList div:first-child a{
+  margin-left: inherit;
+}
+

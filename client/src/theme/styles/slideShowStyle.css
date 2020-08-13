@@ -25,7 +25,11 @@
   overflow: hidden;
   background-color: black;
 }
-
+@media (max-width: 600px) {
+  .mainSlideShow {
+    height: 150px;
+  }
+}
 
 
 .slider_item {

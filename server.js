@@ -9,11 +9,12 @@ const keys = require("./config/keys");
 const productsRouter = require("./routes/productsRouter.js");
 const usersRouter = require("./routes/usersRouter.js");
 const orderRouter = require("./routes/orderRouter");
+const port = process.env.PORT || 3000
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-/* app.use(cors()); */
+app.use(cors());
 
 
 mongoose.connect(keys.mongoURI, 
@@ -49,6 +50,6 @@ if (procces.env.NODE_ENV === "production") {
     })
 }
 
-app.listen(3000, () => console.log("Server started"));
+app.listen(port, () => console.log(`Server started on ported: ${port}`));
 
 module.exports.app = app;

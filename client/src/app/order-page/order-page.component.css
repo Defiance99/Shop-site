@@ -27,6 +27,11 @@ a:hover {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-decoration: underline orange;
 }
+@media (max-width: 1000px) {
+  .orange-text {
+    font-size: 1em;
+  }
+}
 
 .orange-text p {
   font-size: 1.5em;

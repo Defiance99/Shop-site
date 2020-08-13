@@ -17,6 +17,7 @@
 
     <div class="catalog">
       <p><span class="lastAddedText">Последние добавленные:</span></p>
+      <br>
       <div class="listItemContainer" *ngIf="items$ | async as items; else loading">
         <ul class="listItem">
           <li *ngFor="let item of items" class="hoverable">

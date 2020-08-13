@@ -44,6 +44,11 @@
   font-size: 18px;
   text-decoration: none;
 }
+@media (max-width: 700px) {
+  .sliderShowButton {
+    padding: 5px;
+  }
+}
 
 .sliderShowButton:hover {
   text-decoration: underline;

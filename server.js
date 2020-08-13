@@ -39,7 +39,7 @@ app.use("/api/product", productsRouter);
 app.use("/api/user", usersRouter);
 
 
-if (procces.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/dist/client'));
 
     app.get('*', (req, res) => {

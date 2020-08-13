@@ -1,6 +1,20 @@
 #aboutProducts {
-    margin: 3% auto;
-    max-width: 90%;
+    /* margin: 3% auto;
+    max-width: 90%; */
+    margin-top: 5%;
+}
+@media (max-width: 1700px) {
+  #aboutProducts {
+    margin-left: 5%;
+    width: 90%;
+  }
+}
+@media (max-width: 700px) {
+  #aboutProducts {
+    margin: 0;
+    margin-top: 5%;
+    width: 100%;
+  }
 }
 
 .mainSlideShow {

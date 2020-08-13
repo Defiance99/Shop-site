@@ -1,6 +1,18 @@
 .mainContainer {
   min-height: calc(100vh - 200px);
 }
+@media (min-width: 1700px) {
+  .mainContainer {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+@media (max-width: 700px) {
+  .mainContainer {
+    width: 100%;
+    margin-left: 0%;
+  }
+}
 
 .creatingProducts {
   display: flex;
@@ -13,13 +25,12 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background-color: white;
 }
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .creatingProducts {
     width: 100%;
     margin-left: 0;
   }
 }
-
 
 .createProducts {
   margin: 0 auto;

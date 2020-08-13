@@ -18,6 +18,18 @@ a {
     margin-top: 50px;
     margin-left: 5%;
 }
+@media (min-width: 1700px) {
+  .Header_InnerContent {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+@media (max-width: 700px) {
+  .Header_InnerContent {
+    width: 100%;
+    margin: 0;
+  }
+}
 
 .HeaderRightBlock {
     display: flex;
@@ -130,6 +142,16 @@ a {
 .navContainer {
     margin-left: 5%;
 }
+@media (min-width: 1700px) {
+  .navContainer {
+    margin-left: 20%;
+  }
+}
+@media (max-width: 700px) {
+  .navContainer {
+    margin: 0;
+  }
+}
 
 .mainNavigationList li a:hover {
     cursor: pointer;
@@ -175,129 +197,3 @@ a {
     font-size: 14px;
 }
 .mainNavigationList li > a:only-child:after { content: ''; }
-
-
-/*                      Form Authentication                      */
-
-/*
-.formAuth {
-    background-color: rgb(240,242,245) black;
-    position: relative;
-    width: 80%;
-    top: 5%;
-    height: 80%;
-    left: 10%;
-    display: none;
-}
-
-.formAuthContainer {
-    display: inline-block;
-    position: absolute;
-    width: 40%;
-    height: 50%;
-    top: 25%;
-    left: 30%;
-    overflow: hidden;
-}
-
-.formAuthContainer p {
-    text-align: center;
-}
-
-.formAuthContainer span {
-    color: rgb(255,78,51);
-    font-size: 3em;
-}
-
-.formAuthContainer input {
-    font-size: 2em;
-    left: 5px;
-}
-
-.enterAuth {
-    width: 400px;
-    padding: 5px;
-    font-size: 2em;
-    color: white;
-    background-color: orange;
-    border: 0px black solid;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.enterAuth:hover {
-    color: chocolate;
-} */
-
-
-
-
-
-/*               Form Registration              */
-
-/*
-.formRegisterContainer {
-    display: inline-block;
-    position: absolute;
-    width: 40%;
-    height: 60%;
-    top: 20%;
-    left: 30%;
-    overflow: hidden;
-    display: none;
-}
-
-.formRegisterContainer p {
-    text-align: center;
-}
-
-.formRegisterContainer span {
-    color: rgb(255,78,51);
-    font-size: 3em;
-}
-
-.formRegisterContainer input {
-    font-size: 2em;
-
-} */
-
-
-
-
-
-
-
-/*                  Cross                */
-/*
-.cross {
-    position: absolute;
-    right: 32px;
-    top: 32px;
-    width: 32px;
-    height: 32px;
-    opacity: 0.3;
-    }
-
-.cross:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-
-.cross:before, .cross:after {
-    position: absolute;
-    left: 15px;
-    content: ' ';
-    height: 33px;
-    width: 2px;
-    background-color: #333;
-}
-
-.cross:before {
-    transform: rotate(45deg);
-}
-
-
-.cross:after {
-    transform: rotate(-45deg);
-}
- */

@@ -31,3 +31,8 @@
   font-size: 1.5em;
   font-weight: 600;
 }
+@media (max-width: 700px) {
+  .footerContainer div > p:first-child {
+    display: none;
+  }
+}

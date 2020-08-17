@@ -1,0 +1,54 @@
+<div class="createProducts">
+  <div class="leftTypeCommentBlock">
+    <p>Мой отзыв о товаре</p>
+    <p>{{productName}}</p>
+  </div>
+
+  <form class="rightTypeCommentBlock" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="rating-area">
+      <p>Оценка товара:</p>
+      <input type="radio" id="star-5" name="rating" value="5">
+      <label for="star-5" title="Оценка «5»" (click)="stars=5"></label>
+      <input type="radio" id="star-4" name="rating" value="4">
+      <label for="star-4" title="Оценка «4»" (click)="stars=4"></label>
+      <input type="radio" id="star-3" name="rating" value="3">
+      <label for="star-3" title="Оценка «3»" (click)="stars=3"></label>
+      <input type="radio" id="star-2" name="rating" value="2">
+      <label for="star-2" title="Оценка «2»" (click)="stars=2"></label>
+      <input type="radio" id="star-1" name="rating" value="1">
+      <label for="star-1" title="Оценка «1»" (click)="stars=1"></label>
+    </div>
+    <div>
+      <p>Достоинтво:</p>
+      <textarea formControlName="advantages" cols="40"></textarea>
+    </div>
+    <div>
+      <p>Недостатки:</p>
+      <textarea cols="40" formControlName="weaknesses"></textarea>
+    </div>
+    <div>
+      <p>Комментарий:</p>
+      <textarea
+        formControlName="comment"
+        cols="40"
+        [ngClass]="{'invalid': form.get('comment').invalid && form.get('comment').touched}"
+      >
+      </textarea>
+      <span class="red-text helper-text" *ngIf="form.get('comment').invalid && form.get('comment').touched">
+        <span *ngIf="form.get('comment').errors['required']">- Поле "Комментарий" не должен быть пустым</span>
+      </span>
+    </div>
+    <div>
+      <p>Ваше имя:</p>
+      <input type="text"
+        class="inputName"
+        formControlName="name"
+        [ngClass]="{'invalid': form.get('name').invalid && form.get('name').touched}"
+      >
+      <span class="red-text helper-text" *ngIf="form.get('name').invalid && form.get('name').touched">
+        <span *ngIf="form.get('name').errors['required']">- Поле "Ваше имя" не должно быть пустым</span>
+      </span>
+    </div>
+    <button type="submit" class="btn" (click)="addComent()" [disabled]="form.invalid || form.disabled">Оставить отзыв</button>
+  </form>
+</div>

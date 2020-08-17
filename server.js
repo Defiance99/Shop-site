@@ -10,6 +10,7 @@ const keys = require("./config/keys");
 const productsRouter = require("./routes/productsRouter.js");
 const usersRouter = require("./routes/usersRouter.js");
 const orderRouter = require("./routes/orderRouter");
+const commentRouter = require("./routes/commentRouter");
 const port = process.env.PORT || 3000
 
 const app = express();
@@ -36,6 +37,7 @@ app.use(express.static(__dirname + "/../public/views")); */
 app.use('/uploads', express.static('uploads'));
 app.use("/api/order", orderRouter);
 app.use("/api/product", productsRouter);
+app.use("/api/comment", commentRouter);
 app.use("/api/user", usersRouter);
 
 

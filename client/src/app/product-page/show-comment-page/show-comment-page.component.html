@@ -1,0 +1,67 @@
+<div class="createProducts">
+  <div *ngIf="comments$ | async as comments; else loading">
+    <div *ngIf="comments.length != 0; else empty">
+      <ul *ngFor="let comment of comments[0].comments">
+        <li class="commentItem">
+          <div class="leftCommentBlock">
+            <div>
+              <i class="material-icons">account_circle</i>
+              <p class="commentName">{{comment.name}}</p>
+            </div>
+            <div>
+              <div class="rating-result">
+                <span [ngClass]="{'active': comment.stars >= 1}"></span>
+                <span [ngClass]="{'active': comment.stars >= 2}"></span>
+                <span [ngClass]="{'active': comment.stars >= 3}"></span>
+                <span [ngClass]="{'active': comment.stars >= 4}"></span>
+                <span [ngClass]="{'active': comment.stars >= 5}"></span>
+              </div>
+            </div>
+          </div>
+          <div class="rightCommentBlock">
+            <div class="advantages" *ngIf="comment.advantages">
+              <h5 style="font-weight: 600">Достоинства</h5>
+              <p>{{comment.advantages}}</p>
+            </div>
+            <div class="weaknesses" *ngIf="comment.weaknesses">
+              <h5 style="font-weight: 600">Недостатки</h5>
+              <p>{{comment.weaknesses}}</p>
+            </div>
+            <div class="comment">
+              <h5 style="font-weight: 600">Комментарий</h5>
+              <p>{{comment.comment}}</p>
+            </div>
+          </div>
+        </li>
+        <li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- Empty -->
+  <ng-template #empty>
+    <div class="emptyContainer">
+      <div><p style="font-size: 2em; font-weight: 700;">Отзывов нет</p></div>
+    </div>
+  </ng-template>
+
+  <!-- Preloader -->
+  <ng-template #loading>
+    <div class="row">
+      <div class="col s12 center">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

@@ -1,4 +1,15 @@
 <div class="mainContainer">
+
+  <!-- <div class="breadcrumbs">
+    <a [routerLink]="['/category', 'Одежда']" routerLinkActive="active">Каталог</a>
+  </div> -->
+
+  <!-- <breadcrumb>
+    <div class="breadcrumbs">
+      <a [routerLink]="['/category', 'Одежда']" routerLinkActive="active">Каталог</a>
+    </div>
+  </breadcrumb> -->
+
   <div class="creatingProducts">
 
     <ng-template #loading>
@@ -19,13 +30,65 @@
       </div>
     </ng-template>
 
-  <div class="displayFlex" *ngIf="items$ | async as items; else loading">
+    <!-- Helper Menu -->
+    <div class="helperMenu">
+
+      <div class="mySearchMenu">
+        <div>
+          <div class="categoryInputHelperMenu">
+            <p><span class="">Выберите категорию:</span></p>
+            <select class="browser-default categoryPick"  [(ngModel)]="searchByProductCategory">
+              <option value="Бытовая техника">Бытовая техника</option>
+              <option value="Автотехника">Автотехника</option>
+              <option value="Одежда">Одежда</option>
+              <option value="Другое">Другое</option>
+            </select>
+          </div>
+
+          <div class="searchInputHelperMenu">
+            <input placeholder="Название товара" type="text" class="validate" [(ngModel)]="searchProduct">
+          </div>
+        </div>
+      </div>
+
+      <div class="menuIcons">
+        <a [class.btn-floating]="tileView">
+          <i class="material-icons" (click)="showTileView(true)">view_comfy</i>
+        </a>
+        <a [class.btn-floating]="!tileView">
+          <i class="material-icons" (click)="showTileView(false)">format_list_bulleted</i>
+        </a>
+      </div>
+    </div>
+    <!-- Flow Products -->
+    <div class="displayFlex" *ngIf="items$ | async as items; else loading">
         <div class="listItemContainer" *ngIf="items.length != 0; else empty">
-          <ul class="listItem">
-            <li *ngFor="let item of items" class="hoverable">
-              <p>{{item.category}}: </p>
-                <p><a [routerLink]="['/product', item._id]">{{item.name}}</a></p>
-                <img class="image" [src]="item.image" height="150" width="150" [routerLink]="['/product', item._id]">
+          <ul class="listItem" [ngClass]="{tileViewListItem: tileView}">
+            <li
+              *ngFor="let item of items | search:searchProduct | searchByCategory:searchByProductCategory"
+              class="hoverable"
+              [ngClass]="{tileViewItem: tileView}"
+              [routerLink]="['/product', item._id]"
+            >
+                <div class="leftProductBlock" [ngClass]="{leftBlockTileView: tileView}">
+                <img
+                  class="image"
+                  [src]="item.image"
+                  height="200"
+                  width="200"
+
+                  [ngClass]="{tileViewImage: tileView}"
+                >
+                </div>
+
+                <div class="rightProductBlock" [ngClass]="{rightBlockTileView : tileView}">
+                  <div [ngClass]="{fontSizeViewTile: tileView}">
+                    <a class="fs2em">{{item.name}}</a>
+                    <span> {{item.cost | currency}}</span>
+                  </div>
+                  <p class="categoryItem" [ngClass]="{categoryItemTileVIew: tileView}">{{item.category}}</p>
+                  <p [ngClass]="{dn: tileView}" *ngIf="item.description != 'null'">{{item.description}}</p>
+                </div>
             </li>
           </ul>
         </div>

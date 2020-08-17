@@ -76,11 +76,19 @@ exports.productById = async function(request, response) {
 
 exports.productByCategory = async function(request, response) {
     let categoryProduct = request.params.category;
-    
+
     try {
-        await Product.find({category: categoryProduct}, function(err, data) {
-            response.status(200).json(data)
-        });
+
+        if (categoryProduct == "Техника") {
+            await Product.find({category: {$in: ["Автотехника", "Бытовая техника"]} }, function(err, data) {
+                response.status(200).json(data)
+            });
+        } else {
+            await Product.find({category: categoryProduct}, function(err, data) {
+                response.status(200).json(data)
+            });
+        }
+        
     }catch(error) {
         response.status(500).json({
             success: false,
@@ -92,6 +100,7 @@ exports.productByCategory = async function(request, response) {
 
 exports.getProducts = async function(request, response) {
     try {
+        
         await Product.find({}, function(err,data) {
             response.json(data)
         }).sort({ $natural: -1 }).limit(6);
@@ -109,7 +118,7 @@ exports.getRandomProduct = function(request, response) {
 }
 
 exports.removeProduct = async function(request, response) {
-
+    
     try {
         /* await Product.find({}, function(err,data) {response.status(200).json(data)}) */
         await Product.remove(

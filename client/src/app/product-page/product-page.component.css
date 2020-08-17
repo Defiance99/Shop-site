@@ -2,29 +2,10 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media (max-width: 650px) {
-  .creatingProducts {
-    width: 100%;
-    margin-left: 0;
-  }
-}
-
 .productContainer {
   display: flex;
   text-align: center;
   font-size: 1.5em;
-}
-@media (max-width: 800px) {
-  .containerHelper {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-}
-
-
-.productContainer > div:first-child {
-  display: inline-flex;
-  margin-left: auto;
 }
 
 .productContainer h3 {
@@ -32,30 +13,98 @@
   font-size: 1.5em;
 }
 
+.leftProductBlock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
 
 .description {
-  margin-top: 20px;
-  padding-right: 25px;
-  width: 35%;
-  border-right: 2px yellow solid;
+  display: flex;
+  width: 100%;
 }
-@media (max-width: 800px) {
-  .description {
-    border-right: none;
-    width: 100%;
-  }
+
+.description div:last-child {
+  /* margin-top: 33px; */
+  overflow: auto;
 }
 
 .product {
   margin-left: 30px;
 }
-@media (max-width: 800px) {
-  .product {
-    margin-left: 0px;
-  }
+
+.image {
+  height: 250px;
+  width: 250px;
 }
 
+.imageBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageBlock input {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.imageBlock input:hover {
+  cursor: pointer;
+}
+
+.productStars {
+
+}
+
+.btnComment {
+  height: 33px;
+  margin-top: 0;
+}
+
+.btnComment:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 .btn-delete {
   margin-top: 5px;
+}
+
+/* Helper classes */
+
+.absolute {
+  position: absolute;
+
+}
+
+/* Media */
+
+@media (max-width: 800px) {
+  .containerHelper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .product {
+    margin-left: 0px;
+  }
+  .image {
+    height: 150px;
+    width: 150px;
+  }
+  .verticalDash {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .creatingProducts {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media (max-width: 400px) {
+  .image {
+    height: 100px;
+    width: 100px;
+  }
 }

@@ -52,3 +52,6 @@
   margin-left: inherit;
 }
 
+.activeLogo {
+  opacity: 1;
+}

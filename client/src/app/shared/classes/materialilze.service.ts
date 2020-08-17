@@ -7,9 +7,9 @@ export interface MaterialInstance {
   close?(): void,
   destroy?(): void
   open?(elem: any): void,
-  close?(elem: any): void
+  close?(elem: any): void,
+  deleteChip?(num: number): void
 }
-
 
 export class MaterializeService {
   static toast(message: string) {
@@ -56,5 +56,11 @@ export class MaterializeService {
     return M.Sidenav.init(ref.nativeElement)
   }
 
+  static initChips(ref: ElementRef): MaterialInstance {
+    return M.Chips.init(ref.nativeElement, {
+      placeholder: "Название товара",
+      limit: 1
+    })
+  }
 }
 

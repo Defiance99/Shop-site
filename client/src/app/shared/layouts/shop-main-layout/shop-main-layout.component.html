@@ -12,12 +12,12 @@
 
               </div>
               <div class="favoriteLogo l1">
-                <a href="">
+                <a>
                   <img src="./assets/images/logoSearch.jpg" alt="Поиск" class="searchLogo favoriteLogo-Class" width="30" height="30" title="Поиск">
               </a>
               </div>
               <div class="favoriteLogo l1">
-                  <a href="">
+                  <a [routerLink]="['/favorite']" routerLinkActive="activeLogo">
                       <img src="./assets/images/logoFavorite.jpg" alt="Избранное" class="favoriteLogo-Class" width="30" height="30" title="Избранное">
                   </a>
               </div>
@@ -51,7 +51,7 @@
 
           <li class="navMenuLi"><a>Каталог товаров</a>
             <ul class="mainCatalogProducts">
-              <li><a>Техника</a>
+              <li><a [routerLink]="['/category', 'Техника']" routerLinkActive="active">Техника</a>
                 <ul>
                     <li><a [routerLink]="['/category', 'Бытовая техника']" routerLinkActive="active">Бытовая Техника</a></li>
                     <li><a [routerLink]="['/category', 'Автотехника']" routerLinkActive="active">Автотехника</a></li>
@@ -76,16 +76,16 @@
       <li class="dropDownList">
         <div class="collapsible-header"><li class=""><a>Каталог товаров</a></div>
         <div class="collapsible-body">
-          <li><a [routerLink]="['/category', 'Бытовая техника']" >Бытовая Техника</a></li>
+          <li><a [routerLink]="['/category', 'Бытовая техника']"  routerLinkActive="active">Бытовая Техника</a></li>
         </div>
         <div class="collapsible-body">
-          <li><a [routerLink]="['/category', 'Автотехника']" >Автотехника</a></li>
+          <li><a [routerLink]="['/category', 'Автотехника']" routerLinkActive="active">Автотехника</a></li>
         </div>
         <div class="collapsible-body">
-          <li><a [routerLink]="['/category', 'Одежда']" >Одежда</a></li>
+          <li><a [routerLink]="['/category', 'Одежда']" routerLinkActive="active">Одежда</a></li>
         </div>
         <div class="collapsible-body">
-          <li><a [routerLink]="['/category', 'Другое']" >Другое</a></li>
+          <li><a [routerLink]="['/category', 'Другое']" routerLinkActive="active">Другое</a></li>
         </div>
       </li>
     </ul>

@@ -1,4 +1,9 @@
 
+export interface BreadCrumb {
+  label: string,
+  url: string
+}
+
 export interface User {
   name?: string,
   login: string,
@@ -36,6 +41,16 @@ export interface Order {
   completed?: boolean
 }
 
+export interface Comment {
+  productId: string,
+  stars?: number,
+  advantages?: string,
+  weaknesses? : string,
+  comment: string,
+  name: string
+}
+
 export interface Message {
   message: string
 }
+

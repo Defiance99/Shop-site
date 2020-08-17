@@ -23,49 +23,75 @@
     <!-- Product -->
     <div class="productContainer row" *ngIf="product; else loading">
 
-      <div class="col s12 center containerHelper">
-        <div class="description">
-          <h4>Описание: </h4>
-          <p>{{product.data.description}}</p>
-        </div>
-
+      <div class="leftProductBlock">
         <div class="product">
           <h3>Название: {{product.data.name}}</h3>
           <p>Категория: {{product.data.category}}</p>
           <p>Цена: {{product.data.cost | currency}}</p>
-          <img class="image" [src]="product.data.image" height="250" width="250">
-          <p>
-            <input type="button"
-              *ngIf="!isEdit; else edit"
-              class="btn"
-              value="Добавить в корзину"
-              (click)="addToOrder(product.data.name, product.data.cost, product.data.description)"
-            >
 
-            <!-- Button Edit -->
-            <ng-template #edit>
-              <button class="btn" (click)="open()" [disabled]="!canEdit">Редактировать</button>
-              <br>
-              <button class="btn btn-delete" (click)="delete()">Удалить</button>
-            </ng-template>
-          </p>
-        </div>
+          <div class="description">
+            <div class="imageBlock">
+              <!-- <div class="productStars">123</div> -->
+              <img class="image" [src]="product.data.image" height="250" width="250">
+              <p>
+                <a class="btnComment" (click)="leaveComment()" *ngIf="!isEdit">
+                  Оставить отзыв
+                </a>
+                <span *ngIf="!isEdit" class="verticalDash"> | </span>
+                <a class="btnComment" (click)="showComment()">
+                  Отзывы
+                </a>
+              </p>
 
-        <!-- Modal Window -->
-        <div class="modal" #modal>
-          <div class="modal-content">
-            <h4>Nope not yet</h4>
+            </div>
+
+            <div *ngIf="product.data.description != 'null'">
+              {{product.data.description}}
+            </div>
           </div>
-          <div class="modal-footer">
-            <a class="modal-close waves-effect waves-green btn-flat">Отмена</a>
-            <a class="modal-close waves-effect waves-green btn-flat" (click)="save()">Сохранить</a>
+
+          <div>
+            <p *ngIf="!isEdit; else edit">
+              <input type="button"
+                class="btn"
+                value="Добавить в корзину"
+                (click)="addToOrder(product.data.name, product.data.cost, product.data.description)"
+              >
+            </p>
+
+            <p>
+              <!-- Button Edit -->
+              <ng-template #edit>
+                <button class="btn" (click)="open()" [disabled]="!canEdit">Редактировать</button>
+                <br>
+                <button class="btn btn-delete" (click)="delete()">Удалить</button>
+              </ng-template>
+            </p>
           </div>
 
         </div>
       </div>
 
+      <!-- Modal Window -->
+      <div class="modal" #modal>
+        <div class="modal-content">
+          <h4>Nope not yet</h4>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close waves-effect waves-green btn-flat">Отмена</a>
+          <a class="modal-close waves-effect waves-green btn-flat" (click)="save()">Сохранить</a>
+        </div>
+      </div>
+
 
     </div>
-
   </div>
+
+  <app-comment-page
+    *ngIf="isLeaveComment"
+    [productName]="product.name"
+    [productId]="id"
+  >
+  </app-comment-page>
+  <app-show-comment-page *ngIf="isShowComment" [productId]="id"></app-show-comment-page>
 </div>

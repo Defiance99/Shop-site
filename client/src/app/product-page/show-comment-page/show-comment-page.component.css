@@ -1,0 +1,86 @@
+.createProducts {
+  margin-top: 0;
+  margin-left: 15%;
+  width: 70%;
+}
+
+.commentItem {
+  display: flex;
+  min-height: 256px;
+  margin-top: 0;
+  border-top: 1px black solid;
+}
+
+.leftCommentBlock {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.leftCommentBlock i {
+  font-size: 3em;
+}
+
+.leftCommentBlock > div {
+  display: flex;
+}
+
+.material-icons {
+  margin-top: 15px;
+}
+
+.rightCommentBlock {
+  width: 70%;
+}
+
+.commentName {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.rightCommentBlock div {
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+
+/* Stars Rating */
+
+.rating-result {
+	width: 265px;
+}
+.rating-result span {
+	padding: 0;
+	font-size: 20px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-result > span:before {
+	content: '★';
+}
+.rating-result > span.active {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+
+/* Empty */
+
+.emptyContainer {
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+}
+
+.emptyContainer div {
+  margin: 0 auto;
+  width: max-content;
+}
+
+
+/* Media */
+
+@media (max-width: 700px) {
+  .createProducts {
+    margin-left: 0;
+    width: 100%;
+  }
+}

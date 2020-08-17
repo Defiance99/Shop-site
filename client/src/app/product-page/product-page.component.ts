@@ -22,6 +22,8 @@ export class ProductPageComponent implements OnInit, OnDestroy, AfterViewInit {
   productSub: Subscription
   isEdit: boolean = false
   canEdit: boolean = false
+  isLeaveComment: boolean = false
+  isShowComment: boolean = false
   modal: MaterialInstance
 
   constructor(private route: ActivatedRoute,
@@ -84,4 +86,14 @@ export class ProductPageComponent implements OnInit, OnDestroy, AfterViewInit {
       }
     )
   }
+
+  leaveComment() {
+    this.isShowComment = false
+    this.isLeaveComment = !this.isLeaveComment
+  }
+  showComment() {
+    this.isLeaveComment = false
+    this.isShowComment = !this.isShowComment
+  }
+
 }

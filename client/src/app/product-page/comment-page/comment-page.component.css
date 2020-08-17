@@ -1,0 +1,98 @@
+/* Typing Comment Container */
+
+textarea {
+  overflow: hidden;
+  overflow-wrap: break-word;
+  resize: none;
+  height: 60px;
+  box-sizing: border-box;
+  background-color: white;
+  outline: none;
+}
+
+.createProducts {
+  display: flex;
+  margin-top: 5%;
+  margin-left: 15%;
+  width: 70%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background-color: rgb(240,242,245);
+}
+
+.leftTypeCommentBlock {
+  width: 30%;
+}
+
+.rightTypeCommentBlock {
+  width: 70%;
+}
+
+.rightTypeCommentBlock input {
+  width: 30%;
+}
+
+.rightTypeCommentBlock div  p{
+  margin-bottom: 0;
+}
+
+.leftTypeCommentBlock p:first-child, .rightTypeCommentBlock p:first-child {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.leftTypeCommentBlock p:last-child {
+  font-size: 1.2em;
+  color: rgb(153,153,153);
+}
+
+textarea.invalid {
+  border: 1px red solid;
+}
+
+
+
+
+/* Rating Stars */
+
+.rating-area {
+  /* display: flex;
+  flex-direction: row-reverse; */
+  width: 220px;
+  overflow: hidden;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 42px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 50px;
+	line-height: 50px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+	position: relative;
+}

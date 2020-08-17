@@ -53,3 +53,7 @@ span.secondary-content {
   left: 49%;
   top: 20px;
 }
+
+.creatingProducts .active {
+  text-decoration: none;
+}

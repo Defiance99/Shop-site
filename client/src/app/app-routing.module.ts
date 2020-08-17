@@ -15,6 +15,7 @@ import { ProductPageComponent } from './product-page/product-page.component'
 import { OrderPageComponent } from './order-page/order-page.component'
 import { ProfilePageComponent } from './profile-page/profile-page.component'
 import { HistoryOrdersPageComponent } from './history-orders-page/history-orders-page.component'
+import { FavoritePageComponent } from './favorite-page/favorite-page.component'
 
 
 const routes: Routes = [
@@ -27,6 +28,22 @@ const routes: Routes = [
   },
   {path: '', component: ShopMainLayoutComponent, canActivate: [AuthGuard], children: [
     {path: 'catalog', component: MainPageComponent},
+
+    /* {path: 'catalog', component: CategoryPageComponent, data: {breadcrumbs: 'Каталог'} ,children: [
+      {
+        path: 'category/:categoryName',
+        component: CategoryPageComponent,
+        data: {breadcrumbs: ''},
+        children: [
+          {
+            path: 'product/:id',
+            component: ProductPageComponent,
+            data: {breadcrumbs: ''}
+          }
+        ]
+      }
+    ]}, */
+
     {path: 'createProducts', component: CreateProductsPageComponent},
     {path: 'myProducts', component: MyProductsPageComponent},
     {path: 'profile', component: ProfilePageComponent},
@@ -34,6 +51,7 @@ const routes: Routes = [
     {path: 'product/:id', component: ProductPageComponent},
     {path: 'order', component: OrderPageComponent},
     {path: 'historyOrders', component: HistoryOrdersPageComponent},
+    {path: 'favorite', component: FavoritePageComponent},
   ]}
 ];
 

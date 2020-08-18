@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs'
 import { AuthService } from '../../services/auth.service'
 import { MaterializeService, MaterialInstance } from '../../classes/materialilze.service'
 import { switchMap } from 'rxjs/operators'
+import { ViewportScroller } from '@angular/common'
 
 @Component({
   selector: 'app-shop-main-layout',
@@ -14,12 +15,18 @@ export class ShopMainLayoutComponent implements OnInit, AfterViewInit {
 
   @ViewChild("sidenav") sidenavRef: ElementRef
   @ViewChild("collapsible") collapsibleRef: ElementRef
+  @ViewChild("floatButt") floatButtRef: ElementRef
   sidenav: MaterialInstance
   collapsible: MaterialInstance
+  floatButt: MaterialInstance
   login: any
 
-  constructor(private auth: AuthService, private route: ActivatedRoute, private router: Router,) {
-  }
+  constructor(
+    private auth: AuthService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private viewportScroller: ViewportScroller
+    ) {}
 
   ngOnInit() {
 
@@ -33,11 +40,20 @@ export class ShopMainLayoutComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.collapsible = MaterializeService.initCollapsiblePopout(this.collapsibleRef)
     this.sidenav = MaterializeService.initSideNav(this.sidenavRef)
+    this.floatButt = MaterializeService.initFloatButt(this.floatButtRef)
+  }
+
+  toTop() {
+    this.viewportScroller.scrollToPosition([0, 0])
+  }
+
+  toBottom() {
+    this.viewportScroller.scrollToPosition([0, document.body.scrollHeight])
   }
 
   triggerLogOut() {
-      this.auth.logOut()
-      this.router.navigate([''])
+    this.auth.logOut()
+    this.router.navigate([''])
   }
 
 }

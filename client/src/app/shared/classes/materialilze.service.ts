@@ -25,10 +25,10 @@ export class MaterializeService {
     })
   }
 
-  static collapsiblePopout() {
+  static collapsiblePopout(ref:ElementRef) {
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelector('.collapsible popout')
-      return M.Collapsible.init(elems, {
+      return M.Collapsible.init(ref.nativeElement, {
         accordion: false
       })
     })
@@ -52,6 +52,10 @@ export class MaterializeService {
     return M.Collapsible.init(ref.nativeElement)
   }
 
+  static initCollapsible(ref: ElementRef): MaterialInstance {
+    return M.Collapsible.init(ref.nativeElement)
+  }
+
   static initSideNav(ref: ElementRef): MaterialInstance {
     return M.Sidenav.init(ref.nativeElement)
   }
@@ -61,6 +65,10 @@ export class MaterializeService {
       placeholder: "Название товара",
       limit: 1
     })
+  }
+
+  static initFloatButt(ref: ElementRef): MaterialInstance {
+    return M.FloatingActionButton.init(ref.nativeElement)
   }
 }
 

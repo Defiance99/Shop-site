@@ -132,4 +132,3 @@ exports.removeProduct = async function(request, response) {
     }
 
 }
-

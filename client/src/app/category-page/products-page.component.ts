@@ -12,7 +12,6 @@ import { switchMap, filter, distinctUntilChanged } from 'rxjs/operators'
 })
 export class CategoryPageComponent implements OnInit {
 
-  breadcrumbs: BreadCrumb[]
   items$: Observable<Product[]>
   category: string
 
@@ -21,7 +20,7 @@ export class CategoryPageComponent implements OnInit {
   searchByProductCategory: string
 
   constructor(private crud: CrudDataServerService, private route: ActivatedRoute, private router: Router) {
-    this.breadcrumbs = this.buildBreadCrumb(this.route.root)
+    /* this.breadcrumbs = this.buildBreadCrumb(this.route.root) */
   }
 
   ngOnInit(): void {
@@ -33,54 +32,9 @@ export class CategoryPageComponent implements OnInit {
         this.category = data
         this.items$ = this.crud.getProductsByCategory(this.category)
       })
-
-      this.router.events.pipe(
-        filter((event: Event) => event instanceof NavigationEnd),
-        distinctUntilChanged()
-      ).subscribe(() => {
-        this.breadcrumbs = this.buildBreadCrumb(this.route.root);
-    })
   }
-
 
   showTileView(type: boolean) {
     this.tileView = type
-  }
-
-
-
-  buildBreadCrumb(route: ActivatedRoute, url: string = '', breadcrumbs: BreadCrumb[] = []): BreadCrumb[] {
-    let label =
-      route.routeConfig && route.routeConfig.data
-        ? route.routeConfig.data.breadcrumb
-        : ""
-    let path =
-      route.routeConfig && route.routeConfig.data ? route.routeConfig.path : ""
-
-    const lastRoutePart = path.split('/').pop()
-    const isDynamicRoute = lastRoutePart.startsWith(':')
-    console.log("IS DYNAMIC ROUTE:", isDynamicRoute)
-    if (isDynamicRoute && !!route.snapshot) {
-      const paramName = lastRoutePart.split(':')[1]
-      console.log("PARAM NAME:", paramName)
-      path = path.replace(lastRoutePart, route.snapshot.params[paramName])
-      label = route.snapshot.params[paramName]
-    }
-
-    const nextUrl = path ? `${url}/${path}` : url
-
-    const breadcrumb: BreadCrumb = {
-      label: label,
-      url: nextUrl
-    }
-
-    const newBreadcrumbs = breadcrumb.label
-      ? [...breadcrumbs, breadcrumb]
-      : [...breadcrumbs]
-
-    if (route.firstChild) {
-      return this.buildBreadCrumb(route.firstChild, nextUrl, newBreadcrumbs);
-    }
-    return
   }
 }

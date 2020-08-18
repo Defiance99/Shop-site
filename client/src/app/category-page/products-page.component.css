@@ -58,7 +58,7 @@
 }
 
 .categoryPick {
-  margin-top: 15px;
+  /* margin-top: 15px; */
   width: auto;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .rightProductBlock {
-  width: 80%;
+  width: 100%;
   overflow: auto;
   border: 1px orange solid;
 }
@@ -209,10 +209,14 @@
   flex-direction: column-reverse !important;
   /* position: relative !important; */
   margin: 15px auto !important;
-  height: 300px !important;
+  height: 250px !important;
   width: 200px !important;
   line-height: none !important;
   text-align: center !important;
+}
+
+.categoryItemTileVIew {
+  margin: 0;
 }
 
 .leftBlockTileView {
@@ -220,7 +224,7 @@
 }
 
 .rightBlockTileView {
-  height: 30%;
+  height: 25%;
   /* padding-top: 5px;
   line-height: 0.5em; */
   border: none;
@@ -235,6 +239,7 @@
 }
 
 .fontSizeViewTile a {
+  width: 100%;
   font-size: 1.3em;
 }
 
@@ -246,3 +251,4 @@
     display: inherit;
   }
 }
+

@@ -79,3 +79,10 @@ textarea {
   display: none;
 }
 
+.categoryField {
+  width: 60% !important;
+}
+
+.costInput {
+  width: 40% !important;
+}

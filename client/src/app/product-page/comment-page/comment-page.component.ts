@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core'
+import { Component, OnInit, Input, OnDestroy, Output, EventEmitter } from '@angular/core'
 import { Form, FormGroup, FormControl, Validators } from '@angular/forms'
 import { Subscription } from 'rxjs'
 import { ProductOperationsService } from '../../shared/services/product-operations.service'
@@ -14,6 +14,7 @@ export class CommentPageComponent implements OnInit, OnDestroy {
   /* @Input() isLeaveComment: boolean */
   @Input() productName: string
   @Input() productId: string
+  @Output() onChanged = new EventEmitter()
   form: FormGroup
   productSub: Subscription
   stars: number
@@ -34,17 +35,20 @@ export class CommentPageComponent implements OnInit, OnDestroy {
   }
 
   leaveComment() {
-    /* this.isLeaveComment = !this.isLeaveComment */
   }
 
-  addComent() {}
+  addComent() {
+  }
 
   showComment() {}
 
   onSubmit() {
     this.form.disable()
     this.productSub = this.productService.addCommentToProduct(this.form.value, this.productId, this.stars).subscribe(
-      (message) => MaterializeService.toast("asd"),
+      (message) => {
+        MaterializeService.toast("Комментарий оставлен")
+        this.onChanged.emit()
+      },
       (error) => {
         this.form.enable()
       }

@@ -20,7 +20,6 @@ export class HistoryOrdersPageComponent implements OnInit, OnDestroy, AfterViewI
 
   ngOnInit(): void {
     this.orders$ = this.orderSerivce.getMyOrdersHistory()
-    /* this.collapsiblePo = MaterializeService.collapsiblePopout() */
   }
 
   ngOnDestroy() {

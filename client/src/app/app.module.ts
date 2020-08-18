@@ -28,7 +28,9 @@ import { FilterMyCatalogDirective } from './shared/directives/filterMyCatalog.di
 import { SearchPipe } from './shared/Pipes/search.pipe'
 import { SearchPipeByCategory } from './shared/Pipes/searchByCategory.pipe';
 import { CommentPageComponent } from './product-page/comment-page/comment-page.component';
-import { ShowCommentPageComponent } from './product-page/show-comment-page/show-comment-page.component'
+import { ShowCommentPageComponent } from './product-page/show-comment-page/show-comment-page.component';
+import { BreadcrumbsPageComponent } from './breadcrumbs-page/breadcrumbs-page.component';
+import { LoadingPageComponent } from './shared/classes/loading-page/loading-page.component'
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { ShowCommentPageComponent } from './product-page/show-comment-page/show-
     SearchPipe,
     SearchPipeByCategory,
     CommentPageComponent,
-    ShowCommentPageComponent
+    ShowCommentPageComponent,
+    BreadcrumbsPageComponent,
+    LoadingPageComponent
   ],
   imports: [
     BrowserModule,

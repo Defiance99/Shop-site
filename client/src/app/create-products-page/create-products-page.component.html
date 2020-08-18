@@ -24,7 +24,7 @@
       <!-- Category -->
       <p>
         <span class="fontSizeDefault">Выберите категорию товара:</span>
-        <select formControlName="category" class="browser-default">
+        <select formControlName="category" class="browser-default categoryField">
           <optgroup label="Техника">
             <option>Бытовая техника</option>
             <option>Автотехника</option>
@@ -35,12 +35,13 @@
       </p>
 
       <!-- Cost -->
-      <div class="input-field col l6">
+      <div class="input-field">
         <input type="number"
-            min="0"
-            formControlName="cost"
-            id="autocomplete-input-cost"
-            [ngClass]="{'invalid': form.get('cost').invalid && form.get('cost').touched}"
+          class="costInput"
+          min="0"
+          formControlName="cost"
+          id="autocomplete-input-cost"
+          [ngClass]="{'invalid': form.get('cost').invalid && form.get('cost').touched}"
         >
         <label for="autocomplete-input-cost">Укажите цену: $</label>
         <span class="errorText helper-text" *ngIf="form.get('cost').invalid && form.get('cost').touched">- Введите цену продутка</span>

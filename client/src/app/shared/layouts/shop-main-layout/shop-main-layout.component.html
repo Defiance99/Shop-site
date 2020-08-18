@@ -100,6 +100,17 @@
   </ul>
 
 
+  <!-- Floating Button -->
+  <div class="fixed-action-btn" #floatButt>
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">more_vert</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating green" (click)="toTop()"><i class="material-icons">arrow_upward</i></a></li>
+      <li><a class="btn-floating green" (click)="toBottom()"><i class="material-icons">arrow_downward</i></a></li>
+    </ul>
+  </div>
+
 
   <router-outlet></router-outlet>
 

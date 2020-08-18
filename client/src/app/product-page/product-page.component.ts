@@ -1,12 +1,13 @@
 import { Component, OnInit, OnDestroy, ElementRef, ViewChild, AfterViewChecked, AfterViewInit, ɵɵgetInheritedFactory } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute, Router, Scroll } from '@angular/router'
 import { Product } from '../shared/services/interfaces'
 import { UserOperationService } from '../shared/services/user-operation.service'
 import { OrderService } from '../shared/services/order.service'
 import { MaterializeService, MaterialInstance } from '../shared/classes/materialilze.service'
 import { Subscription, Observable } from 'rxjs'
-import { materialize } from 'rxjs/operators'
+import { materialize, filter } from 'rxjs/operators'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { ViewportScroller } from '@angular/common'
 
 @Component({
   selector: 'app-product-page',
@@ -23,13 +24,14 @@ export class ProductPageComponent implements OnInit, OnDestroy, AfterViewInit {
   isEdit: boolean = false
   canEdit: boolean = false
   isLeaveComment: boolean = false
-  isShowComment: boolean = false
+  /* isShowComment: boolean = false */
   modal: MaterialInstance
 
   constructor(private route: ActivatedRoute,
     private userService: UserOperationService,
     private order: OrderService,
-    private router: Router
+    private router: Router,
+    private viewportScroller: ViewportScroller
     ) { }
 
   ngOnInit(): void {
@@ -55,6 +57,19 @@ export class ProductPageComponent implements OnInit, OnDestroy, AfterViewInit {
       this.modal = MaterializeService.initModal(this.modalRef)
       this.canEdit = true
     },  2000)
+
+    this.router.events.pipe(filter(e => e instanceof Scroll)).subscribe((e: any) => {
+
+      setTimeout(() => {
+        if (e.position) {
+          this.viewportScroller.scrollToPosition(e.position)
+        } else if (e.anchor) {
+          this.viewportScroller.scrollToAnchor(e.anchor)
+        } else {
+          this.viewportScroller.scrollToPosition([0, 0])
+        }
+      })
+    })
   }
 
   addToOrder(name: string, cost: number, description: string) {
@@ -88,12 +103,6 @@ export class ProductPageComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   leaveComment() {
-    this.isShowComment = false
     this.isLeaveComment = !this.isLeaveComment
   }
-  showComment() {
-    this.isLeaveComment = false
-    this.isShowComment = !this.isShowComment
-  }
-
 }

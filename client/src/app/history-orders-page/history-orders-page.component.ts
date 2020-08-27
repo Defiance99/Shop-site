@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewChecked, 
 import { MaterializeService, MaterialInstance} from '../shared/classes/materialilze.service'
 import { OrderService } from '../shared/services/order.service'
 import { UserOperationService } from '../shared/services/user-operation.service'
-import { Order, Message } from '../shared/services/interfaces'
+import { Order, Message } from '../shared/interfaces'
 import { Observable } from 'rxjs'
 
 @Component({

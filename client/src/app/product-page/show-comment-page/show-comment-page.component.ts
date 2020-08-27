@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { ProductOperationsService } from '../../shared/services/product-operations.service'
 import { Observable } from 'rxjs'
-import { Comment } from '../../shared/services/interfaces'
+import { Comment } from '../../shared/interfaces'
 
 @Component({
   selector: 'app-show-comment-page',

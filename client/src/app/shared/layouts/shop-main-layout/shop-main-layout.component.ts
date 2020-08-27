@@ -43,12 +43,10 @@ export class ShopMainLayoutComponent implements OnInit, AfterViewInit {
     this.floatButt = MaterializeService.initFloatButt(this.floatButtRef)
   }
 
-  toTop() {
-    this.viewportScroller.scrollToPosition([0, 0])
-  }
-
-  toBottom() {
-    this.viewportScroller.scrollToPosition([0, document.body.scrollHeight])
+  scrollToAnchor($anchor: any) {
+    /* this.viewportScroller.scrollToPosition([0, 0]) */
+   /*  this.viewportScroller.scrollToAnchor('top') */
+   $anchor.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
   }
 
   triggerLogOut() {

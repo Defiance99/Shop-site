@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core'
-import { Product, BreadCrumb } from '../shared/services/interfaces'
+import { Product, BreadCrumb } from '../shared/interfaces'
 import { CrudDataServerService } from '../shared/services/crud-data-server.service'
 import { ActivatedRoute, ActivatedRouteSnapshot, Router, NavigationEnd, Event } from '@angular/router'
 import {Subscription, Observable} from 'rxjs'

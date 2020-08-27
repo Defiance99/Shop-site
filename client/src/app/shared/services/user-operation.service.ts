@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs'
 import {tap} from 'rxjs/operators'
 
-import {Product, Profile, Message} from './interfaces'
+import {Product, Profile, Message} from '../interfaces'
 import { Form } from '@angular/forms'
 
 @Injectable({

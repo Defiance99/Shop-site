@@ -17,10 +17,9 @@
 
           <div class="description">
             <div class="imageBlock">
-              <!-- <div class="productStars">123</div> -->
               <img [src]="product.data.image"  class="image" height="250" width="250">
               <p>
-                <a class="btnComment" (click)="leaveComment()" *ngIf="!isEdit" [routerLink]="[this.route.url]" [fragment]="'createCommentAnchor'">
+                <a class="btnComment" (click)="leaveComment()" *ngIf="!isEdit" id="createCommentAnchor">
                   Оставить отзыв
                 </a>
               </p>
@@ -77,6 +76,7 @@
     [productId]="id"
     id="createCommentAnchor"
     (addComent)="leaveComment()"
+    #comment
   >
   </app-comment-page>
 </div>

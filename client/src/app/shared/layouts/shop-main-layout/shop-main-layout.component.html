@@ -1,6 +1,6 @@
 <body>
   <header class="Header">
-      <div class="Header_InnerContent row">
+      <div class="Header_InnerContent row" #top>
           <div class="HeaderLeftBlock l3">
               <a routerLink="/catalog" title="Торговый портал">
                   <img src="./assets/images/Header__Logo.svg" alt="Торговый портал shop.by" class="header-logo">
@@ -100,21 +100,10 @@
   </ul>
 
 
-  <!-- Floating Button -->
-  <div class="fixed-action-btn" #floatButt>
-    <a class="btn-floating btn-large red">
-      <i class="large material-icons">more_vert</i>
-    </a>
-    <ul>
-      <li><a class="btn-floating green" (click)="toTop()"><i class="material-icons">arrow_upward</i></a></li>
-      <li><a class="btn-floating green" (click)="toBottom()"><i class="material-icons">arrow_downward</i></a></li>
-    </ul>
-  </div>
-
 
   <router-outlet></router-outlet>
 
-  <footer class="footer">
+  <footer class="footer" #bottom>
     <div class="footerContainer">
       <div class="logo">
         <a routerLink="/catalog" title="Торговый портал">
@@ -148,5 +137,17 @@
       </div>
     </div>
   </footer>
+
+    <!-- Floating Button -->
+    <div class="fixed-action-btn" #floatButt>
+      <a class="btn-floating btn-large red">
+        <i class="large material-icons">more_vert</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating green" (click)="scrollToAnchor(top)"><i class="material-icons">arrow_upward</i></a></li>
+        <li><a class="btn-floating green" (click)="scrollToAnchor(bottom)"><i class="material-icons">arrow_downward</i></a></li>
+      </ul>
+    </div>
+
 
 </body>

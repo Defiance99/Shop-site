@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http'
 import { Observable } from 'rxjs'
 import {tap} from 'rxjs/operators'
 
-import {User} from './interfaces'
+import {User} from '../interfaces'
 import { Router } from '@angular/router'
 
 

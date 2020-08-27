@@ -28,22 +28,6 @@ const routes: Routes = [
   },
   {path: '', component: ShopMainLayoutComponent, canActivate: [AuthGuard], children: [
     {path: 'catalog', component: MainPageComponent},
-
-    /* {path: 'catalog', component: CategoryPageComponent, data: {breadcrumbs: 'Каталог'} ,children: [
-      {
-        path: 'category/:categoryName',
-        component: CategoryPageComponent,
-        data: {breadcrumbs: ''},
-        children: [
-          {
-            path: 'product/:id',
-            component: ProductPageComponent,
-            data: {breadcrumbs: ''}
-          }
-        ]
-      }
-    ]}, */
-
     {path: 'createProducts', component: CreateProductsPageComponent},
     {path: 'myProducts', component: MyProductsPageComponent},
     {path: 'profile', component: ProfilePageComponent},
@@ -56,7 +40,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), ReactiveFormsModule, FormsModule],
+  imports: [RouterModule.forRoot(routes, {
+    anchorScrolling: "enabled",
+  }),
+  ReactiveFormsModule, FormsModule],
   exports: [RouterModule],
   providers: [AuthGuard]
 })

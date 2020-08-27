@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module'
-/* import { BreadcrumbModule } from 'angular-crumbs' */
 
 import { AppComponent } from './app.component'
 import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component'
@@ -26,11 +25,11 @@ import { HistoryOrdersPageComponent } from './history-orders-page/history-orders
 import { FavoritePageComponent } from './favorite-page/favorite-page.component'
 import { FilterMyCatalogDirective } from './shared/directives/filterMyCatalog.directive'
 import { SearchPipe } from './shared/Pipes/search.pipe'
-import { SearchPipeByCategory } from './shared/Pipes/searchByCategory.pipe';
-import { CommentPageComponent } from './product-page/comment-page/comment-page.component';
-import { ShowCommentPageComponent } from './product-page/show-comment-page/show-comment-page.component';
-import { BreadcrumbsPageComponent } from './breadcrumbs-page/breadcrumbs-page.component';
-import { LoadingPageComponent } from './shared/classes/loading-page/loading-page.component'
+import { SearchPipeByCategory } from './shared/Pipes/searchByCategory.pipe'
+import { CommentPageComponent } from './product-page/comment-page/comment-page.component'
+import { ShowCommentPageComponent } from './product-page/show-comment-page/show-comment-page.component'
+import { BreadcrumbsPageComponent } from './breadcrumbs-page/breadcrumbs-page.component'
+import { LoadingPageComponent } from './shared/pages/loading-page/loading-page.component'
 
 @NgModule({
   declarations: [

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ElementRef, ViewChild, AfterViewChecked, AfterViewInit, ɵɵgetInheritedFactory } from '@angular/core'
 import { ActivatedRoute, Router, Scroll } from '@angular/router'
-import { Product } from '../shared/services/interfaces'
+import { Product } from '../shared/interfaces'
 import { UserOperationService } from '../shared/services/user-operation.service'
 import { OrderService } from '../shared/services/order.service'
 import { MaterializeService, MaterialInstance } from '../shared/classes/materialilze.service'

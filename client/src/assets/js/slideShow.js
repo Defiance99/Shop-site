@@ -42,7 +42,10 @@ function showSlides(n) {
 }
 
 function setTimeoutSlide() {
-  setTimeout(plusSlides, 4000);
-  setTimeout(setTimeoutSlide, 4000);
+  setTimeout(function() {
+    plusSlides();
+    setTimeoutSlide();
+  }, 4000);
+  /* setTimeout(setTimeoutSlide, 4000); */
 }
 

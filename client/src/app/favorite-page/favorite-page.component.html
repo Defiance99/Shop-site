@@ -1,6 +1,19 @@
 <div class="mainContainer">
   <div class="creatingProducts">
 
+    <div class="panel" style="border: 1px black solid;">
+      <div class="header" (click)="expand()">
+        <p>Toggle panel</p>
+      </div>
+
+      <div class="content" [@expandedPanel] = "state">
+        <h1>Title</h1>
+
+        <p>Expanded panel</p>
+      </div>
+     </div>
+
+
   </div>
 
   <div class="creatingProducts">

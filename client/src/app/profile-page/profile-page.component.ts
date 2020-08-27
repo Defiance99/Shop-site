@@ -5,7 +5,7 @@ import { Subscription, Observable } from 'rxjs'
 import { MaterializeService } from '../shared/classes/materialilze.service'
 import { UserOperationService } from '../shared/services/user-operation.service'
 import { AuthService } from '../shared/services/auth.service'
-import { Profile } from '../shared/services/interfaces'
+import { Profile } from '../shared/interfaces'
 
 @Component({
   selector: 'app-profile-page',

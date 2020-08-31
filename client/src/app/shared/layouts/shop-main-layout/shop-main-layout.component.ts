@@ -16,6 +16,7 @@ export class ShopMainLayoutComponent implements OnInit, AfterViewInit {
   @ViewChild("sidenav") sidenavRef: ElementRef
   @ViewChild("collapsible") collapsibleRef: ElementRef
   @ViewChild("floatButt") floatButtRef: ElementRef
+  @ViewChild("chatComponent") chatComponentRef
   sidenav: MaterialInstance
   collapsible: MaterialInstance
   floatButt: MaterialInstance
@@ -52,6 +53,10 @@ export class ShopMainLayoutComponent implements OnInit, AfterViewInit {
   triggerLogOut() {
     this.auth.logOut()
     this.router.navigate([''])
+  }
+
+  callChat() {
+    this.chatComponentRef.stateName()
   }
 
 }

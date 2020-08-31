@@ -6,12 +6,14 @@ const path = require("path");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const bodyParser = require('body-parser');
+const socket = require('socket.io');
 const keys = require("./config/keys");
 const productsRouter = require("./routes/productsRouter.js");
 const usersRouter = require("./routes/usersRouter.js");
 const orderRouter = require("./routes/orderRouter");
 const commentRouter = require("./routes/commentRouter");
 const port = process.env.PORT || 3000
+
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -53,6 +55,24 @@ if (process.env.NODE_ENV === "production") {
     })
 }
 
-app.listen(port, () => console.log(`Server started on ported: ${port}`));
+const server = app.listen(port, () => {
+    console.log(`Server started on ported: ${port}`)
+});
+
+let io = socket(server);
+io.on('connection', function(socket) {
+    console.log('Connected user:', socket.id);
+
+    socket.on('my broadcast', message => {
+        console.log(message.userName, message.message)
+        socket.emit('my message', message)
+        socket.broadcast.emit('my message', message)
+    });
+
+    socket.on('disconnect', () => {
+        console.log('User disconnect')
+    }); 
+});
+
 
 module.exports.app = app;

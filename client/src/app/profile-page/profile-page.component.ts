@@ -38,9 +38,9 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
   initForm() {
     this.form = new FormGroup({
-      password: new FormControl({value: null, disabled: true}, [Validators.required, Validators.minLength(2)]),
-      login: new FormControl({value: null, disabled: true}, [Validators.required, Validators.minLength(2)]),
-      name: new FormControl({value: null, disabled: true}, [Validators.required, Validators.minLength(2)])
+      password: new FormControl({value: "", disabled: true}, [Validators.required, Validators.minLength(2)]),
+      login: new FormControl({value: "", disabled: true}, [Validators.required, Validators.minLength(2)]),
+      name: new FormControl({value: "", disabled: true}, [Validators.required, Validators.minLength(2)])
     })
 
     this.form.patchValue({

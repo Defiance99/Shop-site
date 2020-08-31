@@ -49,3 +49,18 @@
 .activeLogo {
   opacity: 1;
 }
+
+li.butt-floating-custom {
+  height: 40px;
+  width: 56px;
+}
+
+.butt-floating-custom {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.butt-floating-custom:hover {
+  cursor: pointer;
+}

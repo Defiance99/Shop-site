@@ -39,7 +39,6 @@ exports.postFormRegister = async function(req,res) {
 
 
     if (userInfo) {
-        console.log(userInfo);
         const resultOfCheckingPasswords = await bcryptjs.compareSync(req.body.password, userInfo.password);
 
         if (resultOfCheckingPasswords) { 
@@ -91,7 +90,7 @@ exports.getUserInfo = async function(req, res) {
 exports.updateUserInfo = async function(req, res) {
     
     const salt =  await bcryptjs.genSaltSync(10); 
-    const password = bcryptjs.hashSync(req.body.password, salt)
+    const password = await bcryptjs.hashSync(req.body.password, salt)
 
     try {
         await User.update(

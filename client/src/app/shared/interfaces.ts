@@ -54,3 +54,7 @@ export interface Message {
   message: string
 }
 
+export interface ChatMessage {
+  userName?: string,
+  message: string
+}

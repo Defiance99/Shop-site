@@ -144,10 +144,11 @@
         <i class="large material-icons">more_vert</i>
       </a>
       <ul>
+        <li><a class="btn-floating blue" (click)="callChat()"><i class="material-icons">textsms</i></a></li>
         <li><a class="btn-floating green" (click)="scrollToAnchor(top)"><i class="material-icons">arrow_upward</i></a></li>
         <li><a class="btn-floating green" (click)="scrollToAnchor(bottom)"><i class="material-icons">arrow_downward</i></a></li>
       </ul>
     </div>
 
-
+    <app-chat-page #chatComponent></app-chat-page>
 </body>

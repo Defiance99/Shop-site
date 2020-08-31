@@ -1,0 +1,49 @@
+<form class="chat-container" [formGroup]="formChat" (ngSubmit)="onSubmit()" [@expandedPanel]="state">
+
+  <div class="message-menu-container" (mousedown)="moveChat($event)">
+    <div class="message-menu">
+      <!-- <i class="material-icons">remove</i> -->
+      <i class="material-icons" (click)="stateName()">close</i>
+    </div>
+  </div>
+
+  <div class="message-container">
+    <ul *ngFor="let message of messages">
+      <li>
+        <i class="material-icons">person</i>
+        <b>{{message.userName}}: </b>
+        <span class="message">{{message.message}}<br></span>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+
+    <div class="message-form">
+      <label for="textMessageForm"><i class="material-icons">perm_identity</i></label>
+      <input
+        type="text"
+        placeholder="Name"
+        formControlName="userName"
+        id="textMessageForm"
+        [ngClass]="{'invalid': formChat.get('userName').invalid && formChat.get('userName').touched}"
+      >
+    </div>
+
+
+    <div class="message-form">
+        <label for="textNameForm"><i class="material-icons">chat</i></label>
+        <input type="text"
+          placeholder="Message"
+          formControlName="message"
+          id="textNameForm"
+          [ngClass]="{'invalid': formChat.get('message').invalid && formChat.get('message').touched}"
+        >
+    </div>
+
+    <input type="submit"
+      class="message-submit-butt btn"
+      [disabled]="formChat.invalid"
+    >
+  </div>
+</form>

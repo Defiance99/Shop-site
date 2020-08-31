@@ -30,6 +30,10 @@ import { CommentPageComponent } from './product-page/comment-page/comment-page.c
 import { ShowCommentPageComponent } from './product-page/show-comment-page/show-comment-page.component'
 import { BreadcrumbsPageComponent } from './breadcrumbs-page/breadcrumbs-page.component'
 import { LoadingPageComponent } from './shared/pages/loading-page/loading-page.component'
+import { TestComponent } from './test/test.component'
+import { ChatPageComponent } from './shared/pages/chat-page/chat-page.component'
+import { SocketService } from './shared/services/socket.service'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -55,9 +59,12 @@ import { LoadingPageComponent } from './shared/pages/loading-page/loading-page.c
     CommentPageComponent,
     ShowCommentPageComponent,
     BreadcrumbsPageComponent,
-    LoadingPageComponent
+    LoadingPageComponent,
+    TestComponent,
+    ChatPageComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -65,7 +72,7 @@ import { LoadingPageComponent } from './shared/pages/loading-page/loading-page.c
     HttpClientModule,
 
   ],
-  providers: [UserOperationService, AuthService, CrudDataServerService, OrderService, {
+  providers: [UserOperationService, AuthService, CrudDataServerService, OrderService, SocketService, {
     provide: HTTP_INTERCEPTORS,
     multi: true,
     useClass: TokenInterceptor

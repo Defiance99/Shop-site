@@ -12,7 +12,7 @@ export class SocketService {
 
   initSocket() {
 
-    this.socket = io(environment.SOCKET_ENDPOINT)
+    this.socket = io() //environment.SOCKET_ENDPOINT
   }
 
   listen(): Observable<ChatMessage> {

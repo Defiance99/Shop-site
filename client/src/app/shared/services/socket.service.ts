@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import * as io from 'socket.io-client';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.prod';
 import { ChatMessage } from '../interfaces'
 import { Observable } from 'rxjs';
 
@@ -11,6 +11,7 @@ export class SocketService {
   private socket: any
 
   initSocket() {
+
     this.socket = io(environment.SOCKET_ENDPOINT)
   }
 

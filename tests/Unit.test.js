@@ -4,8 +4,11 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('../server').app;
 const expect = chai.expect;
+
 let User = require('../models/User');
 let Product = require('../models/Product');
+let Order = require('../models/Order');
+let Comment = require('../models/Comment');
 
 let authToken = {token: ''};
 let productId = "";
@@ -260,6 +263,12 @@ describe('Product Controller', () => {
 }); 
 
 describe('Order Controller', () => {
+    before( done => {
+        Order.remove({}, err => {
+            if (err) console.log(err);
+            done();
+        });
+    });
 
     describe('/GET myOrder', () => {
         it('Should return list of orders', done => {
@@ -395,6 +404,12 @@ describe('Comment Controller', () => {
         name: 'Test',
         comment: 'Test'
     }
+    before( done => {
+        Comment.remove({}, err => {
+            if (err) console.log(err);
+            done();
+        });
+    });
 
     describe('/POST createComment', () => {
         it('Should create comment', done => {

@@ -121,7 +121,7 @@ exports.removeProduct = async function(request, response) {
     
     try {
         /* await Product.find({}, function(err,data) {response.status(200).json(data)}) */
-        await Product.remove(
+        await Product.deleteOne(
             {$and: [{"userId": request.user._id}, {"_id": request.params.id}]},
             function(err, data) {
                 response.status(200).json({message: "Удалено"});

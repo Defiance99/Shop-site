@@ -21,7 +21,7 @@ const user  = {
 chai.use(chaiHttp);
 
 before((done) => {
-    User.remove({}, (err) => {
+    User.deleteMany({}, (err) => {
         if (err) console.log(err);
     });
     it('Should POST form sign up', done => {
@@ -113,7 +113,7 @@ describe('Product Controller', () => {
         cost: 1,
     }
     before( done => {
-        Product.remove({}, err => {
+        Product.deleteMany({}, err => {
             if (err) console.log(err);
             done();
         });
@@ -264,7 +264,7 @@ describe('Product Controller', () => {
 
 describe('Order Controller', () => {
     before( done => {
-        Order.remove({}, err => {
+        Order.deleteMany({}, err => {
             if (err) console.log(err);
             done();
         });
@@ -355,7 +355,7 @@ describe('Order Controller', () => {
                 .end((err,res) => {
                     expect(err).to.be.null;
                     expect(res).to.have.status(200);
-                    expect(res.body).to.equal([]);
+                    expect(res.body).to.be.an('array')
 
                     done();
                 });
@@ -405,7 +405,7 @@ describe('Comment Controller', () => {
         comment: 'Test'
     }
     before( done => {
-        Comment.remove({}, err => {
+        Comment.deleteMany({}, err => {
             if (err) console.log(err);
             done();
         });
@@ -416,7 +416,7 @@ describe('Comment Controller', () => {
             chai.request(server)
                 .post(`/api/comment/createComment`)
                 .set('authorization', authToken.token)
-                .send(form)
+                .send({form,productId})
                 .end((err,res) => {
                     expect(err).to.be.null;
                     expect(res).to.have.status(200);
@@ -446,7 +446,7 @@ describe('Comment Controller', () => {
                 .end((err,res) => {
                     expect(err).to.be.null;
                     expect(res).to.have.status(200);
-                    expect(res.body).to.haveOwnProperty(data);
+                    expect(res.body).to.be.an('array');
 
                     done();
                 });

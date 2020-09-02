@@ -22,7 +22,7 @@ exports.addProductToOrder = async function(req, res) {
 
 
     try {
-        await Order.update(
+        await Order.updateOne(
             {$and: [{userId: req.user._id}, {completed: false}]},
             {  
                 $addToSet: {'list': {
@@ -49,7 +49,7 @@ exports.addProductToOrder = async function(req, res) {
 exports.removeOrder = async function(req,res) {
 
     try {
-        await Order.update(
+        await Order.updateOne(
             {$and: [{"userId": req.user._id}, {"completed": false}]}, 
             {$pull: {"list": {"_id": req.params.id}}},
             {multi: false},
@@ -69,9 +69,9 @@ exports.checkout = async function(req, res) {
     
 
     try {
-        let countDoc = await Order.find({completed: true}).count();
+        let countDoc = await Order.find({completed: true}).countDocuments();
         
-        await Order.update(
+        await Order.updateOne(
             {$and: [{userId: req.user._id}, {completed: false}]},
             {
                 "completed": true, 

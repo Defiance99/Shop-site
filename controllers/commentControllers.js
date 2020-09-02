@@ -7,7 +7,7 @@ exports.createComment = async function(request, response) {
 
     try {
         /* await Comment.find({}, function(err,data) {response.status(200).json(data)}) */
-        await Comment.update(
+        await Comment.updateOne(
             {"productId": productId},
             {
                 $addToSet: {'comments': {
@@ -21,7 +21,6 @@ exports.createComment = async function(request, response) {
             },
             {upsert: true},
             function(err, data) {
-                console.log(data)
                 response.status(200).json({message: "Отзыв оставлен"});
             }
         );
@@ -41,7 +40,6 @@ exports.getComments = async function(request, response) {
             {"productId": productId},
             {comments: true},
             function(err,data) {
-                console.log(data);
                 response.status(200).json(data);
             }
         );

@@ -46,7 +46,7 @@ exports.addProductToOrder = async function(req, res) {
     }
 }
 
-exports.removeProduct = async function(req,res) {
+exports.removeOrder = async function(req,res) {
 
     try {
         await Order.update(

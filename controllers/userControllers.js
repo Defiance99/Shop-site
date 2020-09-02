@@ -48,7 +48,6 @@ exports.postFormRegister = async function(req,res) {
                 id: userInfo._id,
             }, keys.jwt, {expiresIn: 60 * 60});
             
-            console.log("HELLO USER!");
             res.status(200).json({
                 token: `Bearer ${token}`
             });

@@ -22,6 +22,6 @@ export class ProductOperationsService {
   }
 
   getCommentsByProductId(id: string): Observable<Comment> {
-    return this.http.get<Comment>(`/api/comment/getCommentsByProductId/${id}`)
+    return this.http.get<Comment>(`/api/comment/commentsByProductId/${id}`)
   }
 }

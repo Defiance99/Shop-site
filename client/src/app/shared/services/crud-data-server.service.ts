@@ -17,7 +17,7 @@ export class CrudDataServerService {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>('/api/product/getProducts')
+    return this.http.get<Product[]>('/api/product/products')
   }
 
   getProductsByCategory(category: string): Observable<Product[]> {

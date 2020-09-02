@@ -42,7 +42,6 @@ app.use("/api/product", productsRouter);
 app.use("/api/comment", commentRouter);
 app.use("/api/user", usersRouter);
 
-
 if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/dist/client'));
 

@@ -11,6 +11,6 @@ orderRouter.get("/myOrder", passport.authenticate('jwt', {session: false}), orde
 orderRouter.get("/checkout", passport.authenticate('jwt', {session: false}), orderControllers.checkout);
 orderRouter.get("/history", passport.authenticate('jwt', {session: false}), orderControllers.history)
 orderRouter.post("/addToOrder", passport.authenticate('jwt', {session: false}), orderControllers.addProductToOrder);
-orderRouter.delete("/myOrder/:id", passport.authenticate('jwt', {session: false}), orderControllers.removeProduct);
+orderRouter.delete("/myOrder/:id", passport.authenticate('jwt', {session: false}), orderControllers.removeOrder);
 
 module.exports = orderRouter

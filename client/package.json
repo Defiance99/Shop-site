@@ -7,9 +7,7 @@
     "start": "ng serve --proxy-config proxy.config.json",
     "build": "webpack",
     "bundle-report": "webpack-bundle-analyzer dist/stats.json",
-    "test": "jasmine",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +29,11 @@
     "typescript": "^3.9.7",
     "zone.js": "~0.10.3",
 
+    "protractor": "~7.0.0",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+
+
     "html-webpack-plugin": "^4.4.1",
     "mini-css-extract-plugin": "^0.11.1",
     "terser-webpack-plugin": "^4.2.2",
@@ -43,8 +46,6 @@
     "url-loader": "^4.1.0"
   },
   "devDependencies": {
-    "@types/jasmine": "~3.5.0",
-    "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "@types/socket.io": "^2.1.11",
     "@types/socket.io-client": "^1.4.33",
@@ -62,7 +63,6 @@
     "karma-typescript": "^5.1.0",
     "karma-typescript-preprocessor": "^0.4.0",
     "mini-svg-data-uri": "^1.2.3",
-    "protractor": "~7.0.0",
     "raw-loader": "^4.0.1",
     "requirejs": "^2.3.6",
     "ts-node": "~8.3.0",

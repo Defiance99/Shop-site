@@ -28,6 +28,7 @@
     "rxjs": "~6.5.5",
     "socket.io": "^2.3.0",
     "tslib": "^2.0.0",
+    "typescript": "^3.9.7",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
@@ -62,7 +63,6 @@
     "requirejs": "^2.3.6",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "^3.9.7",
     "url-loader": "^4.1.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",

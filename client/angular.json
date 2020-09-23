@@ -27,12 +27,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/js/materialize.js",
-              "src/assets/js/materialize.min.js",
-              "src/assets/js/slideShow.js",
-              "src/assets/js/sideNavPlugin.js",
-              "src/assets/js/collapsiblePopout.js",
-              "src/assets/js/collapsibleMenu.js"
+
             ]
           },
           "configurations": {
@@ -106,9 +101,6 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -116,14 +108,14 @@
           }
         },
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "client:serve"
+            "protractorConfig": "",
+            "devServerTarget": ""
           },
           "configurations": {
             "production": {
-              "devServerTarget": "client:serve:production"
+              "devServerTarget": ""
             }
           }
         }

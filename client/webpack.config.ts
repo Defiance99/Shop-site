@@ -1,7 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+/* const UglifyJsPlugin = require('uglifyjs-webpack-plugin') */
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -19,18 +20,6 @@ module.exports = {
       chunks: 'all'
     }
   },
-  plugins: [
-    new HtmlWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].js'
-    }),
-    /* new CopyWebpackPlugin({
-      patterns: [
-        {from: 'src/assets', to: 'assets'}
-      ]
-    }), */
-    new UglifyJsPlugin (),
-  ],
   resolve: {
     extensions: ['.ts', '.js']
   },
@@ -67,5 +56,18 @@ module.exports = {
       },
 
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].js'
+    }),
+    /* new UglifyJsPlugin (), */
+    new TerserPlugin({
+      parallel: true,
+      terserOptions: {
+        ecma: 6,
+      },
+    }),
+  ]
 }

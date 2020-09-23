@@ -89,17 +89,16 @@
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "karmaConfig": "karma.conf.ts",
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/assets/css/materialize.css"
+              "src/styles.css"
+
             ],
             "scripts": [
-              "src/assets/js/materialize.js"
+
             ]
           }
         },

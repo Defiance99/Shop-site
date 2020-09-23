@@ -16,7 +16,7 @@ export class ShopMainLayoutComponent implements OnInit, AfterViewInit {
   @ViewChild("sidenav") sidenavRef: ElementRef
   @ViewChild("collapsible") collapsibleRef: ElementRef
   @ViewChild("floatButt") floatButtRef: ElementRef
-  @ViewChild("chatComponent") chatComponentRef
+  @ViewChild("chatComponent") chatComponentRef: any
   sidenav: MaterialInstance
   collapsible: MaterialInstance
   floatButt: MaterialInstance

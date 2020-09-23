@@ -2,10 +2,11 @@
   "name": "client",
   "version": "0.0.0",
   "scripts": {
+    "dev": "webpack-dev-server --hot --open",
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.json",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "SET NODE_ENV='production' && webpack",
+    "test": "jasmine",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -27,7 +28,6 @@
     "rxjs": "~6.5.5",
     "socket.io": "^2.3.0",
     "tslib": "^2.0.0",
-    "typescript": "~3.9.5",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
@@ -36,8 +36,17 @@
     "@types/node": "^12.11.1",
     "@types/socket.io": "^2.1.11",
     "@types/socket.io-client": "^1.4.33",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.1.0",
     "codelyzer": "^6.0.0-next.1",
-    "jasmine-core": "^3.5.0",
+    "copy-webpack-plugin": "^6.1.0",
+    "css-loader": "^4.3.0",
+    "extract-loader": "^5.1.0",
+    "file-loader": "^6.1.0",
+    "html-loader": "^1.3.0",
+    "html-webpack-plugin": "^4.4.1",
+    "jasmine-core": "^3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "^5.1.1",
     "karma-chrome-launcher": "^3.1.0",
@@ -47,9 +56,16 @@
     "karma-requirejs": "^1.1.0",
     "karma-typescript": "^5.1.0",
     "karma-typescript-preprocessor": "^0.4.0",
+    "mini-css-extract-plugin": "^0.11.1",
     "protractor": "~7.0.0",
+    "raw-loader": "^4.0.1",
     "requirejs": "^2.3.6",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0"
+    "tslint": "~6.1.0",
+    "typescript": "^3.9.7",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "3.11.0"
   }
 }

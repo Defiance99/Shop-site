@@ -30,6 +30,7 @@ import { ShowCommentPageComponent } from './product-page/show-comment-page/show-
 import { LoadingPageComponent } from './shared/pages/loading-page/loading-page.component'
 import { ChatPageComponent } from './shared/pages/chat-page/chat-page.component'
 import { SocketService } from './shared/services/socket.service'
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({

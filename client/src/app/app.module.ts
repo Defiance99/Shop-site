@@ -52,8 +52,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     HistoryOrdersPageComponent,
     FavoritePageComponent,
 
-    FilterMyCatalogDirective,
-
     SearchPipe,
     SearchPipeByCategory,
     CommentPageComponent,

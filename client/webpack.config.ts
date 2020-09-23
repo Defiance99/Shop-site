@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -24,11 +25,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].js'
     }),
-    new CopyWebpackPlugin({
+    /* new CopyWebpackPlugin({
       patterns: [
         {from: 'src/assets', to: 'assets'}
       ]
-    })
+    }), */
+    new UglifyJsPlugin (),
   ],
   resolve: {
     extensions: ['.ts', '.js']
@@ -50,16 +52,21 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/i,
-        loader: ['url-loader?name=assets/images/[name].[ext]']
+        loader: 'url-loader',
+        options: {
+          outputPath: 'assets/images/',
+          name: '[name].[hash].[ext]'
+        }
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader?url=false']
       },
       {
         test: /\.(js)$/,
         use: 'babel-loader'
-      }
+      },
+
     ]
   }
 }

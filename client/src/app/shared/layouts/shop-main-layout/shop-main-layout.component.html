@@ -3,7 +3,8 @@
       <div class="Header_InnerContent row" #top>
           <div class="HeaderLeftBlock l3">
               <a routerLink="/catalog" title="Торговый портал">
-                  <img src='assets/images/Header__Logo.svg' alt="Торговый портал shop.by" class="header-logo">
+                  <!-- <div class="header-logo"></div> -->
+                  <img src='/assets/images/Header__Logo.svg' alt="Торговый портал shop.by" class="header-logo">
               </a>
           </div>
           <div class="HeaderRightBlock l7">
@@ -13,19 +14,20 @@
               </div>
               <div class="favoriteLogo l1">
                 <a>
-                  <img src="assets/images/logoSearch.jpg" alt="Поиск" class="searchLogo favoriteLogo-Class" width="30" height="30" title="Поиск">
+                  <!-- <div class="searchLogo"></div> -->
+                  <img src="/assets/images/logoSearch.jpg" alt="Поиск" class="searchLogo favoriteLogo-Class" width="30" height="30" title="Поиск">
               </a>
               </div>
               <div class="favoriteLogo l1">
                   <a [routerLink]="['/favorite']" routerLinkActive="activeLogo">
-                      <img src="assets/images/logoFavorite.jpg" alt="Избранное" class="favoriteLogo-Class" width="30" height="30" title="Избранное">
+                      <img src="/assets/images/logoFavorite.jpg" alt="Избранное" class="favoriteLogo-Class" width="30" height="30" title="Избранное">
                   </a>
               </div>
               <div class="authLogoContainerl1">
                 <div class="authLogo">
                   <div>
                     <a routerLink="/profile" routerLinkActive="activeLogo">
-                      <img src="assets/images/logoAuth.png" alt="" class="authLogoImg" width="30" height="30" title="Войти">
+                      <img src="/assets/images/logoAuth.png" alt="" class="authLogoImg" width="30" height="30" title="Войти">
                   </a>
                   </div>
                   <div>
@@ -107,6 +109,7 @@
     <div class="footerContainer">
       <div class="logo">
         <a routerLink="/catalog" title="Торговый портал">
+          <!-- <div class="footer-logo"></div> -->
           <img src="/assets/images/Header__Logo.svg" alt="Торговый портал shop.by" class="footer-logo">
       </a>
       <span class="CardText">Покупай у нас!</span>

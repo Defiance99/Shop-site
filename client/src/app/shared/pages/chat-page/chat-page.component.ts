@@ -1,7 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { SocketService } from '../../services/socket.service'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-import { Subscription, Observable } from 'rxjs'
+import { Subscription } from 'rxjs/index'
 import { ChatMessage } from '../../interfaces'
 import { trigger, style, state, transition, animate } from '@angular/animations'
 

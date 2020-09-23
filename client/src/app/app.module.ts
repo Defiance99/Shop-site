@@ -23,14 +23,11 @@ import { OrderService } from './shared/services/order.service'
 import { ProfilePageComponent } from './profile-page/profile-page.component'
 import { HistoryOrdersPageComponent } from './history-orders-page/history-orders-page.component'
 import { FavoritePageComponent } from './favorite-page/favorite-page.component'
-import { FilterMyCatalogDirective } from './shared/directives/filterMyCatalog.directive'
 import { SearchPipe } from './shared/Pipes/search.pipe'
 import { SearchPipeByCategory } from './shared/Pipes/searchByCategory.pipe'
 import { CommentPageComponent } from './product-page/comment-page/comment-page.component'
 import { ShowCommentPageComponent } from './product-page/show-comment-page/show-comment-page.component'
-import { BreadcrumbsPageComponent } from './breadcrumbs-page/breadcrumbs-page.component'
 import { LoadingPageComponent } from './shared/pages/loading-page/loading-page.component'
-import { TestComponent } from './test/test.component'
 import { ChatPageComponent } from './shared/pages/chat-page/chat-page.component'
 import { SocketService } from './shared/services/socket.service'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -56,9 +53,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     SearchPipeByCategory,
     CommentPageComponent,
     ShowCommentPageComponent,
-    BreadcrumbsPageComponent,
     LoadingPageComponent,
-    TestComponent,
     ChatPageComponent,
   ],
   imports: [

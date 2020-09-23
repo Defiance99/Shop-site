@@ -1,9 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core'
-import { Product, BreadCrumb } from '../shared/interfaces'
+import { Product } from '../shared/interfaces'
 import { CrudDataServerService } from '../shared/services/crud-data-server.service'
-import { ActivatedRoute, ActivatedRouteSnapshot, Router, NavigationEnd, Event } from '@angular/router'
-import {Subscription, Observable} from 'rxjs'
-import { switchMap, filter, distinctUntilChanged } from 'rxjs/operators'
+import { ActivatedRoute, Router } from '@angular/router'
+import { Observable } from 'rxjs/index'
+import { switchMap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-products-page',

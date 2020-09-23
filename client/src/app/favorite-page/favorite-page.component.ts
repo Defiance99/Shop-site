@@ -1,18 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { trigger, state, style, transition, animate } from '@angular/animations'
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-favorite-page',
   templateUrl: './favorite-page.component.html',
-  styleUrls: ['./favorite-page.component.css'],
-  animations: [
-    trigger('expandedPanel', [
-      state('initial', style({height: 0})),
-      state('expanded', style({height: '*'})),
-      transition('initial <=> expanded', animate('1s'))
-    ])
-  ]
+  styleUrls: ['./favorite-page.component.css']
 })
 export class FavoritePageComponent implements OnInit {
 

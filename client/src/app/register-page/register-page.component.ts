@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { AuthService } from '../shared/services/auth.service'
 import { Router } from '@angular/router'
-import { Subscription } from 'rxjs'
+import { Subscription } from 'rxjs/index'
 
 @Component({
   selector: 'app-register-page',

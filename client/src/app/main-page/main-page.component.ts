@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CrudDataServerService } from '../shared/services/crud-data-server.service'
 import { Product } from '../shared/interfaces'
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/index';
 
 @Component({
   selector: 'app-main-page',

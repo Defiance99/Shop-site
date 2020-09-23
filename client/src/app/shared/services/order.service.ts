@@ -1,10 +1,8 @@
 import {Injectable} from '@angular/core'
 import {HttpClient, HttpParams} from '@angular/common/http'
-import { Observable } from 'rxjs'
-import {tap} from 'rxjs/operators'
+import { Observable } from 'rxjs/index'
 
-import {Product, Profile, Order, Message} from '../interfaces'
-import { Form } from '@angular/forms'
+import {Order, Message} from '../interfaces'
 
 @Injectable()
 export class OrderService {

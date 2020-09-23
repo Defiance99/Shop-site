@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core'
-import {HttpClient, HttpParams} from '@angular/common/http'
-import { Observable } from 'rxjs'
+import {HttpClient} from '@angular/common/http'
+import { Observable } from 'rxjs/index'
 import {tap} from 'rxjs/operators'
 
 import {User} from '../interfaces'
-import { Router } from '@angular/router'
 
 
 @Injectable()

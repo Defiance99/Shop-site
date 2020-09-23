@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Renderer2} from '@angular/core';
+/* import {Directive, ElementRef, Renderer2} from '@angular/core';
 
 @Directive({
     selector: '[filterProduct]'
@@ -10,3 +10,4 @@ export class FilterMyCatalogDirective{
       this.renderer.setStyle(this.elementRef.nativeElement, "font-weight", "bold");
     }
 }
+ */

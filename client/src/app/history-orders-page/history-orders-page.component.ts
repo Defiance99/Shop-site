@@ -1,9 +1,8 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewChecked, AfterViewInit } from '@angular/core'
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core'
 import { MaterializeService, MaterialInstance} from '../shared/classes/materialilze.service'
 import { OrderService } from '../shared/services/order.service'
-import { UserOperationService } from '../shared/services/user-operation.service'
-import { Order, Message } from '../shared/interfaces'
-import { Observable } from 'rxjs'
+import { Order } from '../shared/interfaces'
+import { Observable } from 'rxjs/index'
 
 @Component({
   selector: 'app-history-orders-page',

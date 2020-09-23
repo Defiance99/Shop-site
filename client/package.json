@@ -6,6 +6,7 @@
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.json",
     "build": "webpack --prod",
+    "bundle-report": "webpack-bundle-analyzer dist/stats.json",
     "test": "jasmine",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -28,18 +29,7 @@
     "socket.io": "^2.3.0",
     "tslib": "^2.0.0",
     "typescript": "^3.9.7",
-    "zone.js": "~0.10.3",
-
-    "html-webpack-plugin": "^4.4.1",
-    "mini-css-extract-plugin": "^0.11.1",
-    "terser-webpack-plugin": "^4.2.2",
-    "angular2-template-loader": "^0.6.2",
-    "awesome-typescript-loader": "^5.2.1",
-    "css-loader": "^4.3.0",
-    "extract-loader": "^5.1.0",
-    "html-loader": "^1.3.0",
-    "babel-loader": "^8.1.0",
-    "url-loader": "^4.1.0"
+    "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@types/jasmine": "~3.5.0",
@@ -62,13 +52,24 @@
     "karma-typescript-preprocessor": "^0.4.0",
     "mini-svg-data-uri": "^1.2.3",
     "protractor": "~7.0.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
     "raw-loader": "^4.0.1",
     "requirejs": "^2.3.6",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.44.1",
+    "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "3.11.0",
+    "html-webpack-plugin": "^4.4.1",
+    "mini-css-extract-plugin": "^0.11.1",
+    "terser-webpack-plugin": "^4.2.2",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^4.3.0",
+    "extract-loader": "^5.1.0",
+    "html-loader": "^1.3.0",
+    "babel-loader": "^8.1.0",
+    "url-loader": "^4.1.0"
   }
 }

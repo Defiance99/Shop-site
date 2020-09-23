@@ -1,10 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
-import { Subscription } from 'rxjs'
+import { Router } from '@angular/router'
 import { AuthService } from '../../services/auth.service'
 import { MaterializeService, MaterialInstance } from '../../classes/materialilze.service'
-import { switchMap } from 'rxjs/operators'
-import { ViewportScroller } from '@angular/common'
 
 @Component({
   selector: 'app-shop-main-layout',
@@ -24,9 +21,7 @@ export class ShopMainLayoutComponent implements OnInit, AfterViewInit {
 
   constructor(
     private auth: AuthService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private viewportScroller: ViewportScroller
+    private router: Router
     ) {}
 
   ngOnInit() {

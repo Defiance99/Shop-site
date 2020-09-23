@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-import { Subscription } from 'rxjs'
-import { Router, ActivatedRoute, Params } from '@angular/router'
+import { Subscription } from 'rxjs/index'
+import { Router } from '@angular/router'
 import { UserOperationService } from '../shared/services/user-operation.service'
 import { MaterializeService } from '../shared/classes/materialilze.service'
 

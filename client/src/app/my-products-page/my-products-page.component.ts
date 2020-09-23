@@ -1,6 +1,6 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core'
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core'
 import { filter, map } from 'rxjs/operators'
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs/index'
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router'
 import { UserOperationService } from '../shared/services/user-operation.service'
 import { Product } from '../shared/interfaces'

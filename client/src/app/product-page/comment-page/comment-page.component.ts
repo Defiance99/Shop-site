@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnDestroy, Output, EventEmitter } from '@angular/core'
-import { Form, FormGroup, FormControl, Validators } from '@angular/forms'
-import { Subscription } from 'rxjs'
+import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { Subscription } from 'rxjs/index'
 import { ProductOperationsService } from '../../shared/services/product-operations.service'
 import { MaterializeService } from '../../shared/classes/materialilze.service'
 

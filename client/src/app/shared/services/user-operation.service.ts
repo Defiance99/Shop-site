@@ -1,10 +1,8 @@
 import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
-import { Observable } from 'rxjs'
-import {tap} from 'rxjs/operators'
+import { Observable } from 'rxjs/index'
 
 import {Product, Profile, Message} from '../interfaces'
-import { Form } from '@angular/forms'
 
 @Injectable({
   providedIn: 'root'

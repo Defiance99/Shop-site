@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { ProductOperationsService } from '../../shared/services/product-operations.service'
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs/index'
 import { Comment } from '../../shared/interfaces'
 
 @Component({

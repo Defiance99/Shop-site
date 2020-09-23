@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { AuthService } from '../shared/services/auth.service'
-import { Subscription } from 'rxjs'
+import { Subscription } from 'rxjs/index'
 import { Router, ActivatedRoute, Params } from '@angular/router'
 import { MaterializeService } from '../shared/classes/materialilze.service'
 

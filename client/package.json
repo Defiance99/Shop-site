@@ -5,7 +5,7 @@
     "dev": "webpack-dev-server --hot --open",
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.json",
-    "build": "SET NODE_ENV='production' && webpack",
+    "build": "webpack --prod",
     "test": "jasmine",
     "lint": "ng lint",
     "e2e": "ng e2e"

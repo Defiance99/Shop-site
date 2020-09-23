@@ -32,7 +32,8 @@
     "protractor": "~7.0.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
-
+    "@types/socket.io": "^2.1.11",
+    "@types/socket.io-client": "^1.4.33",
 
     "html-webpack-plugin": "^4.4.1",
     "mini-css-extract-plugin": "^0.11.1",
@@ -47,8 +48,7 @@
   },
   "devDependencies": {
     "@types/node": "^12.11.1",
-    "@types/socket.io": "^2.1.11",
-    "@types/socket.io-client": "^1.4.33",
+
     "codelyzer": "^6.0.0-next.1",
     "copy-webpack-plugin": "^6.1.0",
     "file-loader": "^6.1.0",

@@ -24,7 +24,7 @@
     "@angular/router": "~10.0.2",
     "express": "^4.17.1",
     "rxjs": "~6.5.5",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.5.0",
     "tslib": "^2.0.0",
     "typescript": "^3.9.7",
     "zone.js": "~0.10.3"
